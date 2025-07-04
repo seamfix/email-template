@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification du statut de la demande de passeport</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+    "
+  >
+    <table
+      align="center"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      style="max-width: 600px; margin: 20px auto"
+    >
+      <!-- En-tête avec logos -->
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 20px 0">
+          <img
+            src="<%= logoUrl %>"
+            alt="Logos du Ministère"
+            style="max-width: 90%; height: auto"
+          />
+        </td>
+      </tr>
+
+      <!-- Corps principal -->
+      <tr>
+        <td bgcolor="#ffffff" style="padding: 0 40px 30px 40px">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <!-- Bannière de titre -->
+            <tr>
+              <td
+                align="center"
+                bgcolor="#eaf2ff"
+                style="
+                  padding: 25px;
+                  border-radius: 8px;
+                  color: #0c3b63;
+                  font-family: Arial, sans-serif;
+                  font-size: 22px;
+                  font-weight: bold;
+                  line-height: 1.4;
+                "
+              >
+                Notification du statut de la demande de passeport
+              </td>
+            </tr>
+
+            <!-- Salutation -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding: 30px 0 15px 0;
+                "
+              >
+                Cher/Chère <td
+  style="
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 30px 0 15px 0;
+  "
+>
+  Cher/Chère 
+  <% if (typeof userFullName !== 'undefined' && userFullName) { %>
+    <%= userFullName %>
+  <% } else if (typeof firstname !== 'undefined' && firstname && typeof lastname !== 'undefined' && lastname) { %>
+    <%= firstname %> <%= lastname %>
+  <% } %>,
+</td>,
+              </td>
+            </tr>
+            <!-- Texte introductif -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-bottom: 5px;
+                "
+              >
+                Merci d'avoir soumis votre demande de passeport international.
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-bottom: 20px;
+                "
+              >
+                Après un examen attentif, nous avons le regret de vous informer
+                que votre demande n'a pas été approuvée pour le moment en raison
+                du/des motif(s) suivant(s) :
+              </td>
+            </tr>
+
+            <!-- Encadré de motif de rejet -->
+            <tr>
+              <td style="padding: 10px 0">
+                <div
+                  style="
+                    background-color: #eaf2ff;
+                    border-left: 4px solid #0c3b63;
+                    padding: 15px 20px;
+                  "
+                >
+                  <p style="margin: 0">
+                    <strong><%= rejectReasonType %> :</strong> <%= reason %>
+                  </p>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Instructions de suivi -->
+            <tr>
+              <td
+                style="
+                  padding-top: 20px;
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                Nous vous encourageons à revoir les détails de votre demande
+                ainsi que les documents requis avant de soumettre une nouvelle
+                demande. Si vous pensez que cette décision est une erreur ou si
+                vous avez des questions concernant le motif du rejet, n'hésitez
+                pas à contacter notre équipe d'assistance à
+                <a
+                  href="mailto:<%= supportEmail %>"
+                  style="color: #0056b3; text-decoration: none"
+                  ><%= supportEmail %></a
+                >.
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  padding-top: 20px;
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                Nous comprenons que cette nouvelle puisse être décevante et nous
+                sommes là pour vous accompagner dans le processus de nouvelle
+                demande si vous souhaitez poursuivre.
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  padding-top: 20px;
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                Merci pour votre compréhension.
+              </td>
+            </tr>
+
+            <!-- Clôture -->
+            <tr>
+              <td style="font-size: 16px; line-height: 1.6; padding-top: 25px">
+                Cordialement,<br />
+                <strong>L'équipe DEI</strong>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Pied de page -->
+      <tr>
+        <td bgcolor="#0a2d52" style="padding: 30px 40px; color: #ffffff">
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="100%"
+            style="color: #ffffff; font-size: 13px"
+          >
+            <!-- Ligne supérieure du pied de page : logo et réseaux sociaux -->
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="50%" valign="middle">
+                      <img
+                        src="<%= mfaLogo %>"
+                        alt="Logo MAE"
+                        style="height: 45px"
+                      />
+                    </td>
+                    <td width="50%" align="right" valign="middle">
+                      <a
+                        href="<%= linkedInLink || '#' %>"
+                        target="_blank"
+                        style="text-decoration: none"
+                      >
+                        <img
+                          style="height: 24px; margin: 0 5px"
+                          src="<%= linkedInGreenLogoUrl %>"
+                          alt="LinkedIn"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Adresse du pied de page -->
+            <tr>
+              <td style="padding-top: 20px; font-size: 13px; line-height: 1.5">
+                © Ministère des affaires étrangères – <%= new
+                Date().getFullYear().toString() %><br />
+                Boulevard de la Marina, Cadjehoun, Cotonou
+              </td>
+            </tr>
+            <!-- Liens vers les applications -->
+            <tr>
+              <td style="padding-top: 20px; font-size: 16px; font-weight: bold">
+                Téléchargez l'application ePass
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px">
+                <a href="<%= appleStoreLink || '#' %>" target="_blank">
+                  <img
+                    style="height: 40px; margin-right: 10px"
+                    src="<%= appleStoreLogoUrl %>"
+                    alt="App Store"
+                  />
+                </a>
+                <a href="<%= playStoreLink || '#' %>" target="_blank">
+                  <img
+                    style="height: 40px"
+                    src="<%= playStoreLogoUrl %>"
+                    alt="Google Play"
+                  />
+                </a>
+              </td>
+            </tr>
+            <!-- Barre de couleur -->
+            <tr>
+              <td style="padding-top: 30px; padding-bottom: 20px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="33.33%" height="5px" bgcolor="#d92432"></td>
+                    <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
+                    <td width="33.33%" height="5px" bgcolor="#32a343"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Propulsé par -->
+            <tr>
+              <td align="center">
+                <span style="font-size: 12px; vertical-align: middle"
+                  >Propulsé par</span
+                >
+                <img
+                  src="<%= seamfixLogoUrl %>"
+                  style="margin-left: 8px; height: 20px; vertical-align: middle"
+                  alt="Logo Seamfix"
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

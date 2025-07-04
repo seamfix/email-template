@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alerte de sécurité : Tentative de connexion échouée</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+    "
+  >
+    <table
+      align="center"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      style="max-width: 600px; margin: 20px auto"
+    >
+      <!-- Header with Logos -->
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 20px 0">
+          <img
+            src="https://govsmart-dr.seamfix.com.ng/assets/icons/mfa-trio-logo.png"
+            alt="Logos du ministère"
+            style="max-width: 90%; height: auto"
+          />
+        </td>
+      </tr>
+
+      <!-- Main Content Body -->
+      <tr>
+        <td bgcolor="#ffffff" style="padding: 0 40px 30px 40px">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <!-- Title Box -->
+            <tr>
+              <td
+                align="center"
+                bgcolor="#fff8e1"
+                style="
+                  padding: 25px;
+                  border-radius: 8px;
+                  color: #f0ad4e;
+                  font-family: Arial, sans-serif;
+                  font-size: 22px;
+                  font-weight: bold;
+                  line-height: 1.4;
+                "
+              >
+                Alerte de sécurité : Tentative de connexion échouée
+              </td>
+            </tr>
+
+            <!-- Greeting -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding: 30px 0 15px 0;
+                "
+              >
+                Bonjour<% if (typeof name !== 'undefined' && name) { %> <%= name
+                %><% } %>,
+              </td>
+            </tr>
+            <!-- Introductory Text -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-bottom: 20px;
+                "
+              >
+                Ceci est une notification de sécurité pour vous informer d'une
+                tentative de connexion échouée sur votre compte.
+              </td>
+            </tr>
+
+            <!-- Attempt Details Box -->
+            <tr>
+              <td align="center">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td style="padding: 10px 0">
+                      <div
+                        style="
+                          background-color: #f5f5f5;
+                          border-left: 5px solid #f0ad4e;
+                          padding: 20px;
+                        "
+                      >
+                        <h3 style="margin-top: 0; color: #333">
+                          Détails de la tentative :
+                        </h3>
+                        <p style="margin: 5px 0">
+                          <strong>Date et heure :</strong> <%= date %>
+                        </p>
+                        <p style="margin: 5px 0">
+                          <strong>Appareil/Navigateur :</strong> <%= browserName
+                          %>
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Security Status -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-top: 20px;
+                "
+              >
+                <strong
+                  >Aucun accès non autorisé à votre compte n'a eu lieu.</strong
+                >
+              </td>
+            </tr>
+
+            <!-- Security Advice -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-top: 20px;
+                "
+              >
+                Si ce n'était pas vous, nous vous recommandons vivement de
+                sécuriser votre compte immédiatement en réinitialisant votre mot
+                de passe.
+              </td>
+            </tr>
+
+            <!-- Closing Advice -->
+            <tr>
+              <td
+                style="
+                  color: #555555;
+                  font-family: Arial, sans-serif;
+                  font-size: 0.9em;
+                  line-height: 1.6;
+                  padding-bottom: 20px;
+                "
+              >
+                Si vous reconnaissez cette activité, vous pouvez ignorer ce
+                message.
+              </td>
+            </tr>
+
+            <!-- Support Text -->
+            <tr>
+              <td
+                style="
+                  color: #555555;
+                  font-family: Arial, sans-serif;
+                  font-size: 0.9em;
+                  line-height: 1.6;
+                "
+              >
+                Pour toute question, veuillez contacter notre équipe de support
+                à
+                <a
+                  href="mailto:ediaspora@gouv.bj"
+                  style="color: #0056b3; text-decoration: none"
+                  >ediaspora@gouv.bj</a
+                >.
+              </td>
+            </tr>
+            <!-- Closing -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-top: 25px;
+                "
+              >
+                Cordialement,<br />
+                <strong>L'équipe DEI</strong>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td bgcolor="#0a2d52" style="padding: 30px 40px; color: #ffffff">
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="100%"
+            style="color: #ffffff; font-size: 13px"
+          >
+            <!-- Footer Top Row: Logo and Social Icons -->
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="50%" valign="middle">
+                      <img
+                        src="https://govsmart-dr.seamfix.com.ng/assets/icons/mfa_logo.png"
+                        alt="Logo MAE"
+                        style="height: 45px"
+                      />
+                    </td>
+                    <td width="50%" align="right" valign="middle">
+                      <a
+                        href="https://linkedin.com/"
+                        style="text-decoration: none"
+                      >
+                        <img
+                          style="height: 24px; margin: 0 5px"
+                          src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                          alt="LinkedIn"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Footer Address -->
+            <tr>
+              <td style="padding-top: 20px; font-size: 13px; line-height: 1.5">
+                © Ministère des affaires étrangères – <%= new
+                Date().getFullYear().toString() %><br />
+                Boulevard de la Marina, Cadjehoun, Cotonou
+              </td>
+            </tr>
+            <!-- App Links -->
+            <tr>
+              <td style="padding-top: 20px; font-size: 16px; font-weight: bold">
+                Obtenez l'application ePass
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px">
+                <a href="https://apps.apple.com/app/govsmart">
+                  <img
+                    style="height: 40px; margin-right: 10px"
+                    src="https://govsmart-dr.seamfix.com.ng/assets/icon/apple-store.png"
+                    alt="App Store"
+                  />
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.govsmart"
+                >
+                  <img
+                    style="height: 40px"
+                    src="https://govsmart-dr.seamfix.com.ng/assets/icon/google-play.png"
+                    alt="Google Play"
+                  />
+                </a>
+              </td>
+            </tr>
+            <!-- Color Bar -->
+            <tr>
+              <td style="padding-top: 30px; padding-bottom: 20px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="33.33%" height="5px" bgcolor="#d92432"></td>
+                    <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
+                    <td width="33.33%" height="5px" bgcolor="#32a343"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Powered By -->
+            <tr>
+              <td align="center">
+                <span style="font-size: 12px; vertical-align: middle"
+                  >Propulsé par</span
+                >
+                <img
+                  src="https://govsmart-dr.seamfix.com.ng/assets/icons/seamfix.svg"
+                  style="margin-left: 8px; height: 20px; vertical-align: middle"
+                  alt="Logo Seamfix"
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
