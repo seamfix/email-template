@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Security Alert: Failed Login Attempt</title>
+    <title>Passport Application Update Required</title>
   </head>
   <body
     style="
@@ -25,7 +25,7 @@
       <tr>
         <td bgcolor="#ffffff" align="center" style="padding: 20px 0">
           <img
-            src="https://epassportal.gouv.bj/assets/icons/mfa-trio-logo.png"
+            src="<%= logoUrl %>"
             alt="Ministry Logos"
             style="max-width: 90%; height: auto"
           />
@@ -36,22 +36,22 @@
       <tr>
         <td bgcolor="#ffffff" style="padding: 0 40px 30px 40px">
           <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            <!-- Title Box -->
+            <!-- Title Banner -->
             <tr>
               <td
                 align="center"
-                bgcolor="#fff8e1"
+                bgcolor="#eaf2ff"
                 style="
                   padding: 25px;
                   border-radius: 8px;
-                  color: #f0ad4e;
+                  color: #0c3b63;
                   font-family: Arial, sans-serif;
                   font-size: 22px;
                   font-weight: bold;
                   line-height: 1.4;
                 "
               >
-                Security Alert: Failed Login Attempt
+                Passport Application Update Required
               </td>
             </tr>
 
@@ -66,9 +66,13 @@
                   padding: 30px 0 15px 0;
                 "
               >
-                Hello <% if (typeof name !== 'undefined' && name) { %> <%= name
-                %><% }%>,
-              </td>
+                Dear <% if (typeof userFullName !== 'undefined' && userFullName) { %>
+    <%= userFullName %>
+  <% } else if (typeof firstname !== 'undefined' && firstname && typeof lastname !== 'undefined' && lastname) { %>
+    <%= firstname %> <%= lastname %>
+  <% } else { %>
+    Applicant
+  <% } %>,          </td>
             </tr>
             <!-- Introductory Text -->
             <tr>
@@ -81,118 +85,64 @@
                   padding-bottom: 20px;
                 "
               >
-                This is a security notification to inform you of a failed login
-                attempt on your account.
+                We noticed that your application for
+                <strong><%= useCase %></strong> has some missing information.
+                The required information is listed below:
               </td>
             </tr>
 
-            <!-- Attempt Details Box -->
+            <!-- Rejection Reason Box -->
             <tr>
-              <td align="center">
-                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                  <tr>
-                    <td style="padding: 10px 0">
-                      <div
-                        style="
-                          background-color: #f5f5f5;
-                          border-left: 5px solid #f0ad4e;
-                          padding: 20px;
-                        "
-                      >
-                        <h3 style="margin-top: 0; color: #333">
-                          Attempt Details:
-                        </h3>
-                        <p style="margin: 5px 0">
-                          <strong>Date & Time:</strong> <%= date %>
-                        </p>
-                        <p style="margin: 5px 0">
-                          <strong>Device/Browser:</strong> <%= browserName %>
-                        </p>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <!-- Security Status -->
-            <tr>
-              <td
-                style="
-                  color: #333333;
-                  font-family: Arial, sans-serif;
-                  font-size: 16px;
-                  line-height: 1.6;
-                  padding-top: 20px;
-                "
-              >
-                <strong
-                  >No unauthorized access to your account occurred.</strong
+              <td style="padding: 10px 0">
+                <div
+                  style="
+                    background-color: #eaf2ff;
+                    border-left: 4px solid #0c3b63;
+                    padding: 15px 20px;
+                  "
                 >
+                  <h3 style="margin-top: 0; color: #0c3b63">
+                    Missing/Incorrect Information:
+                  </h3>
+                  <p><strong><%= rejectReasonType %>:</strong> <%= reason %></p>
+                </div>
               </td>
             </tr>
 
-            <!-- Security Advice -->
+            <!-- Instructions Section -->
             <tr>
-              <td
-                style="
-                  color: #333333;
-                  font-family: Arial, sans-serif;
-                  font-size: 16px;
-                  line-height: 1.6;
-                  padding-top: 20px;
-                "
-              >
-                If this was not you, we strongly recommend you secure your
-                account immediately by resetting your password.
-              </td>
-            </tr>
-
-            <!-- Closing Advice -->
-            <tr>
-              <td
-                style="
-                  color: #555555;
-                  font-family: Arial, sans-serif;
-                  font-size: 0.9em;
-                  line-height: 1.6;
-                  padding-bottom: 20px;
-                "
-              >
-                If you recognize this activity, you can disregard this message.
+              <td style="padding-top: 20px">
+                <h3 style="margin-bottom: 10px">
+                  To proceed, please take the following steps:
+                </h3>
+                <ol style="margin-top: 0; padding-left: 20px; line-height: 1.8">
+                  <li style="margin-bottom: 10px">Log in to your account</li>
+                  <li style="margin-bottom: 10px">
+                    Correct or complete the necessary details
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    Provide accurate and up-to-date information
+                  </li>
+                  <li>Resubmit your application for processing</li>
+                </ol>
               </td>
             </tr>
 
             <!-- Support Text -->
             <tr>
-              <td
-                style="
-                  color: #555555;
-                  font-family: Arial, sans-serif;
-                  font-size: 0.9em;
-                  line-height: 1.6;
-                "
-              >
-                For any questions, please contact our support team at
+              <td style="font-size: 16px; line-height: 1.6; padding-top: 20px">
+                If you need help, contact our support team at
                 <a
-                  href="mailto:ediaspora@gouv.bj"
+                  href="mailto:<%= supportEmail %>"
                   style="color: #0056b3; text-decoration: none"
-                  >ediaspora@gouv.bj</a
+                  ><%= supportEmail %></a
                 >.
               </td>
             </tr>
             <!-- Closing -->
             <tr>
-              <td
-                style="
-                  color: #333333;
-                  font-family: Arial, sans-serif;
-                  font-size: 16px;
-                  line-height: 1.6;
-                  padding-top: 25px;
-                "
-              >
-                Best regards,<br />
+              <td style="font-size: 16px; line-height: 1.6; padding-top: 25px">
+                Best Regards,<br />
                 <strong>The DEI Team</strong>
               </td>
             </tr>
@@ -217,19 +167,20 @@
                   <tr>
                     <td width="50%" valign="middle">
                       <img
-                        src="https://epassportal.gouv.bj/assets/icons/mfa_logo.png"
+                        src="<%= mfaLogo %>"
                         alt="MFA Logo"
                         style="height: 45px"
                       />
                     </td>
                     <td width="50%" align="right" valign="middle">
                       <a
-                        href="https://www.linkedin.com/company/benin-diplomatie/"
+                        href="<%= linkedInLink || '#' %>"
+                        target="_blank"
                         style="text-decoration: none"
                       >
                         <img
                           style="height: 24px; margin: 0 5px"
-                          src="https://govsmart-dr.seamfix.com.ng/assets/icon/linkedIn_icon.png"
+                          src="<%= linkedInGreenLogoUrl %>"
                           alt="LinkedIn"
                         />
                       </a>
@@ -255,19 +206,17 @@
             </tr>
             <tr>
               <td style="padding-top: 10px">
-                <a href="https://apps.apple.com/app/govsmart">
+                <a href="<%= appleStoreLink || '#' %>" target="_blank">
                   <img
                     style="height: 40px; margin-right: 10px"
-                    src="https://epassportal.gouv.bj/assets/icon/apple-store.png"
+                    src="<%= appleStoreLogoUrl %>"
                     alt="App Store"
                   />
                 </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.govsmart"
-                >
+                <a href="<%= playStoreLink || '#' %>" target="_blank">
                   <img
                     style="height: 40px"
-                    src="https://epassportal.gouv.bj/assets/icon/google-play.png"
+                    src="<%= playStoreLogoUrl %>"
                     alt="Google Play"
                   />
                 </a>
@@ -292,7 +241,7 @@
                   >Powered by</span
                 >
                 <img
-                  src="https://epassportal.gouv.bj/assets/icons/seamfix.svg"
+                  src="<%= seamfixLogoUrl %>"
                   style="margin-left: 8px; height: 20px; vertical-align: middle"
                   alt="Seamfix Logo"
                 />

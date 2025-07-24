@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mise à jour requise pour la demande de passeport</title>
+    <title>Notification du statut de la demande de passeport</title>
   </head>
   <body
     style="
@@ -51,7 +51,7 @@
                   line-height: 1.4;
                 "
               >
-                Mise à jour requise pour la demande de passeport
+                Notification du statut de la demande de passeport
               </td>
             </tr>
 
@@ -66,7 +66,7 @@
                   padding: 30px 0 15px 0;
                 "
               >
-                Cher/Chère Cher/Chère  <% if (typeof userFullName !== 'undefined' && userFullName) { %>
+                Bonjour  <% if (typeof userFullName !== 'undefined' && userFullName) { %>
     <%= userFullName %>
   <% } else if (typeof firstname !== 'undefined' && firstname && typeof lastname !== 'undefined' && lastname) { %>
     <%= firstname %> <%= lastname %>
@@ -81,12 +81,25 @@
                   font-family: Arial, sans-serif;
                   font-size: 16px;
                   line-height: 1.6;
+                  padding-bottom: 5px;
+                "
+              >
+                Merci d'avoir soumis votre demande de passeport international.
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
                   padding-bottom: 20px;
                 "
               >
-                Nous avons constaté que votre demande pour
-                <strong><%= useCase %></strong> comporte des informations
-                manquantes. Les informations requises sont listées ci-dessous :
+                Après un examen attentif, nous avons le regret de vous informer
+                que votre demande n'a pas été approuvée pour le moment en raison
+                du/des motif(s) suivant(s) :
               </td>
             </tr>
 
@@ -100,42 +113,29 @@
                     padding: 15px 20px;
                   "
                 >
-                  <h3 style="margin-top: 0; color: #0c3b63">
-                    Informations manquantes/incorrectes :
-                  </h3>
-                  <p>
+                  <p style="margin: 0">
                     <strong><%= rejectReasonType %> :</strong> <%= reason %>
                   </p>
                 </div>
               </td>
             </tr>
 
-            <!-- Section instructions -->
+            <!-- Instructions de suivi -->
             <tr>
-              <td style="padding-top: 20px">
-                <h3 style="margin-bottom: 10px">
-                  Pour continuer, veuillez suivre les étapes suivantes :
-                </h3>
-                <ol style="margin-top: 0; padding-left: 20px; line-height: 1.8">
-                  <li style="margin-bottom: 10px">
-                    Connectez-vous à votre compte
-                  </li>
-                  <li style="margin-bottom: 10px">
-                    Corrigez ou complétez les informations nécessaires
-                  </li>
-                  <li style="margin-bottom: 10px">
-                    Fournissez des informations exactes et à jour
-                  </li>
-                  <li>Soumettez à nouveau votre demande pour traitement</li>
-                </ol>
-              </td>
-            </tr>
-
-            <!-- Texte de support -->
-            <tr>
-              <td style="font-size: 16px; line-height: 1.6; padding-top: 20px">
-                Si vous avez besoin d'aide, contactez notre équipe d'assistance
-                à
+              <td
+                style="
+                  padding-top: 20px;
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                Nous vous encourageons à revoir les détails de votre demande
+                ainsi que les documents requis avant de soumettre une nouvelle
+                demande. Si vous pensez que cette décision est une erreur ou si
+                vous avez des questions concernant le motif du rejet, n'hésitez
+                pas à contacter notre équipe d'assistance à
                 <a
                   href="mailto:<%= supportEmail %>"
                   style="color: #0056b3; text-decoration: none"
@@ -143,6 +143,35 @@
                 >.
               </td>
             </tr>
+            <tr>
+              <td
+                style="
+                  padding-top: 20px;
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                Nous comprenons que cette nouvelle puisse être décevante et nous
+                sommes là pour vous accompagner dans le processus de nouvelle
+                demande si vous souhaitez poursuivre.
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  padding-top: 20px;
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                Merci pour votre compréhension.
+              </td>
+            </tr>
+
             <!-- Clôture -->
             <tr>
               <td style="font-size: 16px; line-height: 1.6; padding-top: 25px">

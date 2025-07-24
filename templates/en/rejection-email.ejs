@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Passport Application Update Required</title>
+    <title>Notification of Passport Application Status</title>
   </head>
   <body
     style="
@@ -51,7 +51,7 @@
                   line-height: 1.4;
                 "
               >
-                Passport Application Update Required
+                Notification of Passport Application Status
               </td>
             </tr>
 
@@ -66,7 +66,7 @@
                   padding: 30px 0 15px 0;
                 "
               >
-                Dear <% if (typeof userFullName !== 'undefined' && userFullName) { %>
+                Hello <% if (typeof userFullName !== 'undefined' && userFullName) { %>
     <%= userFullName %>
   <% } else if (typeof firstname !== 'undefined' && firstname && typeof lastname !== 'undefined' && lastname) { %>
     <%= firstname %> <%= lastname %>
@@ -80,12 +80,26 @@
                   font-family: Arial, sans-serif;
                   font-size: 16px;
                   line-height: 1.6;
+                  padding-bottom: 5px;
+                "
+              >
+                Thank you for submitting your application for an international
+                passport.
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
                   padding-bottom: 20px;
                 "
               >
-                We noticed that your application for
-                <strong><%= useCase %></strong> has some missing information.
-                The required information is listed below:
+                After careful review, we regret to inform you that your
+                application has not been approved at this time due to the
+                following reason(s):
               </td>
             </tr>
 
@@ -99,37 +113,29 @@
                     padding: 15px 20px;
                   "
                 >
-                  <h3 style="margin-top: 0; color: #0c3b63">
-                    Missing/Incorrect Information:
-                  </h3>
-                  <p><strong><%= rejectReasonType %>:</strong> <%= reason %></p>
+                  <p style="margin: 0">
+                    <strong><%= rejectReasonType %>:</strong> <%= reason %>
+                  </p>
                 </div>
               </td>
             </tr>
 
-            <!-- Instructions Section -->
+            <!-- Follow-up Instructions -->
             <tr>
-              <td style="padding-top: 20px">
-                <h3 style="margin-bottom: 10px">
-                  To proceed, please take the following steps:
-                </h3>
-                <ol style="margin-top: 0; padding-left: 20px; line-height: 1.8">
-                  <li style="margin-bottom: 10px">Log in to your account</li>
-                  <li style="margin-bottom: 10px">
-                    Correct or complete the necessary details
-                  </li>
-                  <li style="margin-bottom: 10px">
-                    Provide accurate and up-to-date information
-                  </li>
-                  <li>Resubmit your application for processing</li>
-                </ol>
-              </td>
-            </tr>
-
-            <!-- Support Text -->
-            <tr>
-              <td style="font-size: 16px; line-height: 1.6; padding-top: 20px">
-                If you need help, contact our support team at
+              <td
+                style="
+                  padding-top: 20px;
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                You are encouraged to review your application details and the
+                required documentation before reapplying. If you believe this
+                decision was made in error or if you have any questions
+                regarding the reason for rejection, please feel free to contact
+                our support team at
                 <a
                   href="mailto:<%= supportEmail %>"
                   style="color: #0056b3; text-decoration: none"
@@ -137,10 +143,39 @@
                 >.
               </td>
             </tr>
+            <tr>
+              <td
+                style="
+                  padding-top: 20px;
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                We understand that this news may be disappointing, and we are
+                here to support you through the reapplication process should you
+                choose to proceed.
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  padding-top: 20px;
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                Thank you for your understanding.
+              </td>
+            </tr>
+
             <!-- Closing -->
             <tr>
               <td style="font-size: 16px; line-height: 1.6; padding-top: 25px">
-                Best Regards,<br />
+                Warm regards,<br />
                 <strong>The DEI Team</strong>
               </td>
             </tr>

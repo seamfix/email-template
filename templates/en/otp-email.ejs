@@ -26,7 +26,7 @@
         <td bgcolor="#ffffff" align="center" style="padding: 20px 0">
           <!-- Note: The provided image has three logos. This single image is used as a placeholder. -->
           <img
-            src="https://govsmart-dr.seamfix.com.ng/assets/icons/mfa-trio-logo.png"
+            src="https://epassportal.gouv.bj/assets/icons/mfa-trio-logo.png"
             alt="Ministry Logos"
             style="max-width: 90%; height: auto"
           />
@@ -36,17 +36,12 @@
       <!-- Main Content Body -->
       <tr>
         <td bgcolor="#ffffff" style="padding: 30px 40px">
-          <table
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            width="100%"
-          >
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- Title -->
             <tr>
               <td
                 style="
-                  color: #0C3B63;
+                  color: #0c3b63;
                   font-family: Arial, sans-serif;
                   font-size: 20px;
                   font-weight: bold;
@@ -67,7 +62,8 @@
                   padding-bottom: 15px;
                 "
               >
-                Hi<% if (typeof name !== 'undefined' && name) { %> <%= name %><% } %>,
+                Hello <% if (typeof name !== 'undefined' && name) { %> <%= name %><%
+                } %>,
               </td>
             </tr>
             <!-- Introductory Text -->
@@ -129,9 +125,11 @@
                 "
               >
                 This code will
-                <strong style="color: #000">expire in <%= minutes %> minutes and
-                can only be used once</strong>. If
-                you did not initiate this request, please disregard this email.
+                <strong style="color: #000"
+                  >expire in <%= minutes %> minutes and can only be used
+                  once</strong
+                >. If you did not initiate this request, please disregard this
+                email.
               </td>
             </tr>
             <!-- Support Text -->
@@ -149,7 +147,7 @@
                 support team.
               </td>
             </tr>
-             <tr>
+            <tr>
               <td
                 style="
                   color: #333333;
@@ -181,7 +179,7 @@
                 Thank you,<br />
                 <strong>[The DEI team]</strong>
               </td>
-            </tr>           
+            </tr>
           </table>
         </td>
       </tr>
@@ -203,16 +201,19 @@
                   <tr>
                     <td width="50%" valign="middle">
                       <img
-                        src="https://govsmart-dr.seamfix.com.ng/assets/icons/mfa_logo.png" 
+                        src="https://epassportal.gouv.bj/assets/icons/mfa_logo.png"
                         alt="MFA Logo"
                         style="height: 45px"
                       />
                     </td>
                     <td width="50%" align="right" valign="middle">
-                      <a href="https://linkedin.com/" style="text-decoration: none;">
+                      <a
+                        href="https://www.linkedin.com/company/benin-diplomatie/"
+                        style="text-decoration: none"
+                      >
                         <img
-                          style="height: 24px; margin: 0 5px;"
-                          src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                          style="height: 24px; margin: 0 5px"
+                          src="https://epassportal.gouv.bj/assets/icon/linkedIn_icon.png"
                           alt="LinkedIn"
                         />
                       </a>
@@ -224,14 +225,19 @@
 
             <!-- Footer Address -->
             <tr>
-              <td style="padding-top: 20px; font-size: 13px; line-height: 1.5;">
-                © Ministère des affaires étrangères – <%= new Date().getFullYear().toString() %><br />
+              <td style="padding-top: 20px; font-size: 13px; line-height: 1.5">
+                © Ministère des affaires étrangères – <%= new
+                Date().getFullYear().toString() %><br />
+              <td style="padding-top: 20px; font-size: 13px; line-height: 1.5">
+                © Ministère des affaires étrangères – <%= new
+                Date().getFullYear().toString() %><br />
                 Boulevard de la Marina, Cadjehoun, Cotonou
               </td>
             </tr>
             <!-- App Links -->
             <tr>
-              <td style="padding-top: 20px; font-size: 16px; font-weight: bold;">
+              <td style="padding-top: 20px; font-size: 16px; font-weight: bold">
+              <td style="padding-top: 20px; font-size: 16px; font-weight: bold">
                 Get the ePass app
               </td>
             </tr>
@@ -240,14 +246,19 @@
                 <a href="https://apps.apple.com/app/govsmart">
                   <img
                     style="height: 40px; margin-right: 10px"
-                    src="https://govsmart-dr.seamfix.com.ng/assets/icon/apple-store.png"
+                    src="https://epassportal.gouv.bj/assets/icon/apple-store.png"
                     alt="App Store"
                   />
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.govsmart">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.govsmart"
+                >
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.govsmart"
+                >
                   <img
                     style="height: 40px"
-                    src="https://govsmart-dr.seamfix.com.ng/assets/icon/google-play.png"
+                    src="https://epassportal.gouv.bj/assets/icon/google-play.png"
                     alt="Google Play"
                   />
                 </a>
@@ -255,25 +266,35 @@
             </tr>
             <!-- Color Bar -->
             <tr>
-                <td style="padding-top: 30px; padding-bottom: 20px;">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                        <tr>
-                            <td width="33.33%" height="5px" bgcolor="#d92432"></td>
-                            <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
-                            <td width="33.33%" height="5px" bgcolor="#32a343"></td>
-                        </tr>
-                    </table>
-                </td>
+              <td style="padding-top: 30px; padding-bottom: 20px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="33.33%" height="5px" bgcolor="#d92432"></td>
+                    <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
+                    <td width="33.33%" height="5px" bgcolor="#32a343"></td>
+                  </tr>
+                </table>
+              </td>
+              <td style="padding-top: 30px; padding-bottom: 20px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="33.33%" height="5px" bgcolor="#d92432"></td>
+                    <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
+                    <td width="33.33%" height="5px" bgcolor="#32a343"></td>
+                  </tr>
+                </table>
+              </td>
             </tr>
             <!-- Powered By -->
             <tr>
               <td align="center">
-                <span style="font-size: 12px; vertical-align: middle;"
+                <span style="font-size: 12px; vertical-align: middle"
+                <span style="font-size: 12px; vertical-align: middle"
                   >Powered by</span
                 >
                 <img
-                  src="https://govsmart-dr.seamfix.com.ng/assets/icons/seamfix.svg"
-                  style="margin-left: 8px; height: 20px; vertical-align: middle;"
+                  src="https://epassportal.gouv.bj/assets/icons/seamfix.svg"
+                  style="margin-left: 8px; height: 20px; vertical-align: middle"
                   alt="Seamfix Logo"
                 />
               </td>
@@ -284,4 +305,3 @@
     </table>
   </body>
 </html>
-
