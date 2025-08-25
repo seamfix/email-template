@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nouvelle réponse Commentaire sur l'application</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+    "
+  >
+    <table
+      align="center"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      style="max-width: 600px; margin: 20px auto"
+    >
+      <!-- En-tête avec logos -->
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 20px 0">
+          <img
+            src="<%= logoUrl %>"
+            alt="Logos du Ministère"
+            style="max-width: 90%; height: auto"
+          />
+        </td>
+      </tr>
+
+      <!-- Corps principal -->
+      <tr>
+        <td
+          style="
+            padding: 30px 20px;
+            text-align: center;
+            background-color: #0a2d52;
+          "
+        >
+          <h1 style="color: white; margin: 0">
+            Nouveau commentaire de réponse sur l'application <%= uniqueId %>
+          </h1>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 30px 20px">
+          <p>
+            Cher<%= userFullName ? ' ' + userFullName : '' %>,
+          </p>
+          <p>
+            Un nouveau commentaire de réponse a été ajouté à l'ID de l'application <%= uniqueId %>:
+          </p>
+          <div
+            style="
+              background-color: #fff8e1;
+              border-left: 4px solid #ffc107;
+              padding: 15px;
+              margin: 20px 0;
+            "
+          >
+            <p><strong> <%= comment %></strong></p>
+          </div>
+          <p>Veuillez consulter ce document dès que possible.</p>
+          <p style="margin-top: 30px">Cordialement,</p>
+          <p><strong>L'équipe DEI</strong></p>
+        </td>
+      </tr>
+
+      <!-- Pied de page -->
+      <tr>
+        <td bgcolor="#0a2d52" style="padding: 30px 40px; color: #ffffff">
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="100%"
+            style="color: #ffffff; font-size: 13px"
+          >
+            <!-- Ligne supérieure du pied de page : logo et réseaux sociaux -->
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="50%" valign="middle">
+                      <img
+                        src="<%= mfaLogo %>"
+                        alt="Logo MAE"
+                        style="height: 45px"
+                      />
+                    </td>
+                    <td width="50%" align="right" valign="middle">
+                      <a
+                        href="<%= linkedInLink || '#' %>"
+                        target="_blank"
+                        style="text-decoration: none"
+                      >
+                        <img
+                          style="height: 24px; margin: 0 5px"
+                          src="<%= linkedInGreenLogoUrl %>"
+                          alt="LinkedIn"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Adresse du pied de page -->
+            <tr>
+              <td style="padding-top: 20px; font-size: 13px; line-height: 1.5">
+                © Ministère des affaires étrangères – <%= new
+                Date().getFullYear().toString() %><br />
+                Boulevard de la Marina, Cadjehoun, Cotonou
+              </td>
+            </tr>
+            <!-- Liens vers les applications -->
+            <tr>
+              <td style="padding-top: 20px; font-size: 16px; font-weight: bold">
+                Téléchargez l'application ePass
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px">
+                <a href="<%= appleStoreLink || '#' %>" target="_blank">
+                  <img
+                    style="height: 40px; margin-right: 10px"
+                    src="<%= appleStoreLogoUrl %>"
+                    alt="App Store"
+                  />
+                </a>
+                <a href="<%= playStoreLink || '#' %>" target="_blank">
+                  <img
+                    style="height: 40px"
+                    src="<%= playStoreLogoUrl %>"
+                    alt="Google Play"
+                  />
+                </a>
+              </td>
+            </tr>
+            <!-- Barre de couleur -->
+            <tr>
+              <td style="padding-top: 30px; padding-bottom: 20px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="33.33%" height="5px" bgcolor="#d92432"></td>
+                    <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
+                    <td width="33.33%" height="5px" bgcolor="#32a343"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Propulsé par -->
+            <tr>
+              <td align="center">
+                <span style="font-size: 12px; vertical-align: middle"
+                  >Propulsé par</span
+                >
+                <img
+                  src="<%= seamfixLogoUrl %>"
+                  style="margin-left: 8px; height: 20px; vertical-align: middle"
+                  alt="Logo Seamfix"
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
