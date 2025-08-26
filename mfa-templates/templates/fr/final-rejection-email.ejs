@@ -66,22 +66,12 @@
                   padding: 30px 0 15px 0;
                 "
               >
-                Cher/Chère <td
-  style="
-    color: #333333;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    padding: 30px 0 15px 0;
-  "
->
 Chère  
   <% if (typeof userFullName !== 'undefined' && userFullName) { %>
     <%= userFullName %>
   <% } else if (typeof firstname !== 'undefined' && firstname && typeof lastname !== 'undefined' && lastname) { %>
     <%= firstname %> <%= lastname %>
   <% } %>,
-</td>,
               </td>
             </tr>
             <!-- Texte introductif -->
