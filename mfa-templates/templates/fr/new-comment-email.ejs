@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mise à jour requise pour la demande de passeport</title>
+    <title>Nouveau commentaire sur l'application</title>
   </head>
   <body
     style="
@@ -34,123 +34,39 @@
 
       <!-- Corps principal -->
       <tr>
-        <td bgcolor="#ffffff" style="padding: 0 40px 30px 40px">
-          <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            <!-- Bannière de titre -->
-            <tr>
-              <td
-                align="center"
-                bgcolor="#eaf2ff"
-                style="
-                  padding: 25px;
-                  border-radius: 8px;
-                  color: #0c3b63;
-                  font-family: Arial, sans-serif;
-                  font-size: 22px;
-                  font-weight: bold;
-                  line-height: 1.4;
-                "
-              >
-                Mise à jour requise pour la demande de passeport
-              </td>
-            </tr>
-
-            <!-- Salutation -->
-            <tr>
-              <td
-                style="
-                  color: #333333;
-                  font-family: Arial, sans-serif;
-                  font-size: 16px;
-                  line-height: 1.6;
-                  padding: 30px 0 15px 0;
-                "
-              >
-                Bonjour  <% if (typeof userFullName !== 'undefined' && userFullName) { %>
-    <%= userFullName %>
-  <% } else if (typeof firstname !== 'undefined' && firstname && typeof lastname !== 'undefined' && lastname) { %>
-    <%= firstname %> <%= lastname %>
-  <% } %>,
-              </td>
-            </tr>
-            <!-- Texte introductif -->
-            <tr>
-              <td
-                style="
-                  color: #333333;
-                  font-family: Arial, sans-serif;
-                  font-size: 16px;
-                  line-height: 1.6;
-                  padding-bottom: 20px;
-                "
-              >
-                Nous avons constaté que votre demande pour
-                <strong><%= useCase %></strong> comporte des informations
-                manquantes. Les informations requises sont listées ci-dessous :
-              </td>
-            </tr>
-
-            <!-- Encadré de motif de rejet -->
-            <tr>
-              <td style="padding: 10px 0">
-                <div
-                  style="
-                    background-color: #eaf2ff;
-                    border-left: 4px solid #0c3b63;
-                    padding: 15px 20px;
-                  "
-                >
-                  <h3 style="margin-top: 0; color: #0c3b63">
-                    Informations manquantes/incorrectes :
-                  </h3>
-                  <p>
-                    <strong><%= rejectReasonType %> :</strong> <%= reason %>
-                  </p>
-                </div>
-              </td>
-            </tr>
-
-            <!-- Section instructions -->
-            <tr>
-              <td style="padding-top: 20px">
-                <h3 style="margin-bottom: 10px">
-                  Pour continuer, veuillez suivre les étapes suivantes :
-                </h3>
-                <ol style="margin-top: 0; padding-left: 20px; line-height: 1.8">
-                  <li style="margin-bottom: 10px">
-                    Connectez-vous à votre compte
-                  </li>
-                  <li style="margin-bottom: 10px">
-                    Corrigez ou complétez les informations nécessaires
-                  </li>
-                  <li style="margin-bottom: 10px">
-                    Fournissez des informations exactes et à jour
-                  </li>
-                  <li>Soumettez à nouveau votre demande pour traitement</li>
-                </ol>
-              </td>
-            </tr>
-
-            <!-- Texte de support -->
-            <tr>
-              <td style="font-size: 16px; line-height: 1.6; padding-top: 20px">
-                Si vous avez besoin d'aide, contactez notre équipe d'assistance
-                à
-                <a
-                  href="mailto:<%= supportEmail %>"
-                  style="color: #0056b3; text-decoration: none"
-                  ><%= supportEmail %></a
-                >.
-              </td>
-            </tr>
-            <!-- Clôture -->
-            <tr>
-              <td style="font-size: 16px; line-height: 1.6; padding-top: 25px">
-                Cordialement,<br />
-                <strong>L'équipe DEI</strong>
-              </td>
-            </tr>
-          </table>
+        <td
+          style="
+            padding: 30px 20px;
+            text-align: center;
+            background-color: #0a2d52;
+          "
+        >
+          <h1 style="color: white; margin: 0">
+            Nouveau commentaire sur l'application <%= uniqueId %>
+          </h1>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 30px 20px">
+          <p>
+            Cher<%= userFullName ? ' ' + userFullName : '' %>,
+          </p>
+          <p>
+            Un nouveau commentaire a été ajouté à l'ID d'application <%= uniqueId %>:
+          </p>
+          <div
+            style="
+              background-color: #fff8e1;
+              border-left: 4px solid #ffc107;
+              padding: 15px;
+              margin: 20px 0;
+            "
+          >
+            <p><strong> <%= comment %></strong></p>
+          </div>
+          <p>Veuillez consulter ce document dès que possible.</p>
+          <p style="margin-top: 30px">Cordialement,</p>
+          <p><strong>L'équipe DEI</strong></p>
         </td>
       </tr>
 
