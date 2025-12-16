@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Complete Your First Payment</title>
+		<title>Final Validation Reminder</title>
 	</head>
 	<body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
 		<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
@@ -16,23 +16,46 @@
 					<table width="100%" border="0" cellpadding="0" cellspacing="0">
 						<tr>
 							<td style="color:#333;font-size:16px;line-height:1.6;">
-								<h2 style="margin:0 0 15px;font-size:22px;color:#0c3b63;">Complete Your First Payment</h2>
-								<p style="margin:0 0 12px 0;">Hi<% if (firstName) { %> <%= firstName %><% } %>, you haven’t made a first payment yet. Complete it to move forward with your passport renewal.</p>
-								
-								
-								<table border="0" cellpadding="0" cellspacing="0" style="margin-top:10px;">
-								  <tr>
-								    <td align="center" bgcolor="#32a343" style="border-radius:6px;">
-								      <a href="com.sfx.mfa.govsmart://"
-								         style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
-								        OPEN APP
-								      </a>
-								    </td>
-								  </tr>
+								<p style="margin:0 0 15px 0;">Hello<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
+								<p style="margin:0 0 12px 0;">Quick nudge — you’re just one step away from finishing your validation.</p>
+								<p style="margin:0 0 12px 0;">Review the last few details, proceed to payment, and complete biometrics from your phone — fast and fully online.</p>
+
+								<ul style="margin:12px 0 12px 20px;padding:0;color:#333">
+									<li style="margin-bottom:6px">❌ No scheduling.</li>
+									<li style="margin-bottom:6px">❌ No appointments.</li>
+									<li style="margin-bottom:6px">❌ No waiting.</li>
+								</ul>
+
+								<p style="margin:0 0 12px 0;">Finish now — it takes less than 10 minutes.</p>
+
+								<table border="0" cellpadding="0" cellspacing="0" style="margin-top:16px;">
+									<tr>
+										<td align="center" bgcolor="#0b5fff" style="border-radius:6px;">
+											<a href="<%= typeof actionUrl === 'string' ? actionUrl : '#' %>" style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold">COMPLETE VALIDATION</a>
+										</td>
+									</tr>
 								</table>
 
-								<% if (supportEmail) { %><p style="font-size:13px;color:#555;margin:0 0 5px 0;">Help: <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p><% } %>
-								<p style="font-size:12px;color:#888;margin-top:30px;">If payment was already made, you can ignore this reminder.</p>
+								<table border="0" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+									<tr>
+										<td align="center" bgcolor="#32a343" style="border-radius:6px;">
+											<a href="com.sfx.mfa.govsmart://"
+											   style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
+												OPEN APP
+											</a>
+										</td>
+									</tr>
+								</table>
+
+								<p style="font-size:13px;color:#555;margin:16px 0 5px 0;">If the button doesn't work, copy and paste this link into your browser:<br/>
+									<span><%= typeof actionUrl === 'string' ? actionUrl : '' %></span>
+								</p>
+
+								<% if (typeof supportEmail === 'string' && supportEmail) { %>
+									<p style="font-size:13px;color:#555;margin:0 0 5px 0;">Help: <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
+								<% } else { %>
+									<p style="font-size:13px;color:#555;margin:0 0 5px 0;">Help: <a href="mailto:support@govsmart.gov.ng" style="color:#0c3b63;text-decoration:none">support@govsmart.gov.ng</a></p>
+								<% } %>
 							</td>
 						</tr>
 					</table>
