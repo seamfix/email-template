@@ -2,50 +2,69 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Your Saved Application Is Aging</title>
+    <title>Start Your Biometric Capture with Passport Scan</title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
+      <!-- Header with Logos -->
       <tr>
         <td bgcolor="#ffffff" align="center" style="padding:20px 0">
           <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa-trio-logo.png" alt="Ministry Logos" style="max-width:90%;height:auto" />
         </td>
       </tr>
+      <!-- Main Content -->
       <tr>
         <td bgcolor="#ffffff" style="padding:30px 40px;">
           <table width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
               <td style="color:#333;font-size:16px;line-height:1.6;">
                 <p style="margin:0 0 15px 0;">Hello<% if (firstName) { %> <%= firstName %><% } %>,</p>
-                <p style="margin:0 0 12px 0;">It's been a month since you started your passport application.</p>
-                <p style="margin:0 0 12px 0;">No worries if you're not ready yet – your application is secure and waiting.</p>
-                <p style="margin:0 0 12px 0;">Common questions we hear:</p>
-                <ul style="padding-left:20px;margin:0 0 12px 0;color:#333;font-size:15px;">
-                  <li><em>“How do fingerprints work without a scanner?”</em> – Our contactless technology works through your phone</li>
-                  <li><em>“Will my phone camera photo be good enough?”</em> – Yes! The app guides you through it</li>
-                  <li><em>“Is it really all online?”</em> – 100% online. Zero appointments. Zero office visits.</li>
-                </ul>
-                <p style="margin:0 0 18px 0;">Have questions? Our support team is here to help.<% if (supportEmail) { %> Reach out: <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a><% } %></p>
                 
+                <p style="margin:0 0 15px 0;">You're <strong>3 days</strong> into your payment hold window. Let's get your biometric capture started!</p>
                 
-                <table border="0" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+                <h2 style="color:#0c3b63;font-size:18px;margin:20px 0 12px 0;">STEP 1: Passport Scan (10 seconds)</h2>
+                
+                <p style="margin:0 0 15px 0;">This is the quickest step – just scan your passport data page with your phone camera. Our OCR technology does the rest.</p>
+                
+                <h3 style="color:#0c3b63;font-size:16px;margin:20px 0 10px 0;">Common Questions:</h3>
+                
+                <div style="margin:0 0 15px 0;background-color:#f5f8fa;padding:15px;border-radius:4px;">
+                  <p style="margin:0 0 10px 0;font-size:15px;">
+                    <strong>📌 "My passport is in another country"</strong><br />
+                    You'll need to get it. The scan is mandatory.
+                  </p>
+                  
+                  <p style="margin:0 0 10px 0;font-size:15px;">
+                    <strong>📌 "My passport is damaged"</strong><br />
+                    As long as the data page is readable, it should work.
+                  </p>
+                  
+                  <p style="margin:0;font-size:15px;">
+                    <strong>📌 "I don't have my old passport"</strong><br />
+                    Contact support immediately at: <a href="mailto:ediaspora@gouv.bj" style="color:#0c3b63;text-decoration:none"><strong>ediaspora@gouv.bj</strong></a> for alternatives.
+                  </p>
+                </div>
+                
+                <p style="margin:0 0 25px 0;color:#d92432;font-weight:bold;font-size:17px;">⚠️ Don't let your payment hold expire! Start now.</p>
+                
+                <!-- CTA Button -->
+                <table border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0">
                   <tr>
-                    <td align="center" bgcolor="#32a343" style="border-radius:6px;">
-                      <a href="com.sfx.mfa.govsmart://"
-                         style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
-                        OPEN APP
-                      </a>
+                    <td align="center" bgcolor="#0c3b63" style="border-radius:4px;padding:14px 30px">
+                      <a href="<%= appDeepLink || '#' %>" style="color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;display:inline-block">BEGIN PASSPORT SCAN</a>
                     </td>
                   </tr>
                 </table>
 
-                <% if (daysRemaining !== undefined) { %><p style="font-size:13px;color:#555;margin:0 0 5px 0;">Expires in <strong><%= daysRemaining %></strong> day<%= daysRemaining === 1 ? '' : 's' %>.</p><% } %>
-                <p style="font-size:12px;color:#888;margin-top:30px;">If you already finished, you can ignore this reminder.</p>
+                <% if (supportEmail) { %>
+                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">Need help? Contact: <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
+                <% } %>
               </td>
             </tr>
           </table>
         </td>
       </tr>
+      <!-- Footer -->
       <tr>
         <td bgcolor="#0a2d52" style="padding:30px 40px;color:#ffffff">
           <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#ffffff;font-size:13px">
@@ -89,7 +108,10 @@
               </td>
             </tr>
             <tr>
-              <td align="center"><span style="font-size:12px;vertical-align:middle">Powered by</span><img src="https://govsmart-dev.seamfix.com.ng/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Seamfix Logo" /></td>
+              <td align="center">
+                <span style="font-size:12px;vertical-align:middle">Powered by</span>
+                <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Seamfix Logo" />
+              </td>
             </tr>
           </table>
         </td>

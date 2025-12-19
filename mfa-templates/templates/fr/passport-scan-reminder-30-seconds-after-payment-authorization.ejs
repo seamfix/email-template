@@ -2,53 +2,71 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Terminez Votre Renouvellement de Passeport</title>
+    <title>Blocage de paiement confirmé ! Commencez par le scan du passeport</title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
+      <!-- Header with Logos -->
       <tr>
         <td bgcolor="#ffffff" align="center" style="padding:20px 0">
           <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa-trio-logo.png" alt="Logos Ministère" style="max-width:90%;height:auto" />
         </td>
       </tr>
+      <!-- Main Content -->
       <tr>
         <td bgcolor="#ffffff" style="padding:30px 40px;">
           <table width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
               <td style="color:#333;font-size:16px;line-height:1.6;">
                 <p style="margin:0 0 15px 0;">Bonjour<% if (firstName) { %> <%= firstName %><% } %>,</p>
-                <p style="margin:0 0 12px 0;">Bienvenue sur la façon la plus simple de renouveler votre passeport béninois – totalement en ligne, sans rendez‑vous, sans déplacement !</p>
-                <p style="margin:0 0 12px 0;">Tout se fait depuis votre téléphone :</p>
-                <ul style="padding-left:20px;margin:0 0 12px 0;color:#333;font-size:15px;">
-                  <li>Prise d'empreintes sans contact</li>
-                  <li>Photo avec l'appareil de votre téléphone</li>
-                  <li>Signature numérique dans l'application</li>
-                  <li>Passeport livré chez vous en 4 semaines</li>
+                
+                <p style="margin:0 0 15px 0;">Parfait ! Votre paiement de <strong>[€<%= amount %>]</strong> est en attente. Complétez votre capture biométrique pour que le paiement soit traité ! 🎉</p>
+                
+                <h2 style="color:#0c3b63;font-size:18px;margin:20px 0 12px 0;">ÉTAPE 1 SUR 6 : Scannez votre passeport (30 secondes)</h2>
+                
+                <p style="margin:0 0 12px 0;">Préparez votre ancien/actuel passeport et commençons !</p>
+                
+                <p style="margin:0 0 8px 0;font-weight:bold;color:#0c3b63;">Ce que vous allez faire :</p>
+                <ul style="padding-left:20px;margin:0 0 15px 0;color:#333;font-size:15px;">
+                  <li>📌 Ouvrir l'application</li>
+                  <li>📌 Placer votre passeport sur une surface plane</li>
+                  <li>📌 Utiliser l'appareil photo de votre téléphone pour scanner la page de données</li>
+                  <li>Notre technologie OCR le lit automatiquement</li>
                 </ul>
-                <p style="margin:0 0 12px 0;">Aucune visite à l'ambassade. Aucun rendez‑vous biométrique. Aucun déplacement.</p>
-                <p style="margin:0 0 18px 0;">Votre demande est sauvegardée, vous pouvez la terminer quand cela vous convient.</p>
                 
+                <p style="margin:0 0 8px 0;font-weight:bold;color:#0c3b63;">Après cela, vous aurez 5 étapes rapides supplémentaires :</p>
+                <ul style="padding-left:20px;margin:0 0 15px 0;color:#333;font-size:15px;">
+                  <li>Photo portrait (2 min)</li>
+                  <li>Téléchargement de documents (1 min)</li>
+                  <li>Capture d'empreintes digitales (2 min)</li>
+                  <li>Signature (Moins de 3 secondes)</li>
+                  <li>Soumettre (moins de 3 secondes)</li>
+                </ul>
                 
-                <table border="0" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+                <p style="margin:0 0 15px 0;"><strong>Temps total : 6 minutes pour tout terminer !</strong></p>
+                
+                <p style="margin:0 0 20px 0;color:#d92432;font-weight:bold;">Votre paiement sera traité après avoir terminé l'étape 5 (signature).</p>
+                
+                <p style="margin:0 0 25px 0;font-weight:bold;">Commençons !</p>
+                
+                <!-- CTA Button -->
+                <table border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0">
                   <tr>
-                    <td align="center" bgcolor="#32a343" style="border-radius:6px;">
-                      <a href="com.sfx.mfa.govsmart://"
-                         style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
-                        OPEN APP
-                      </a>
+                    <td align="center" bgcolor="#0c3b63" style="border-radius:4px;padding:14px 30px">
+                      <a href="<%= appDeepLink || '#' %>" style="color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;display:inline-block">SCANNER LE PASSEPORT MAINTENANT</a>
                     </td>
                   </tr>
                 </table>
 
                 <% if (supportEmail) { %>
-                  <p style="font-size:13px;color:#555;margin:0 0 5px 0;">Aide : <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
+                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">Besoin d'aide ? Contactez : <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
                 <% } %>
-                <p style="font-size:12px;color:#888;margin-top:30px;">Si vous avez déjà terminé, ignorez ce message.</p>
               </td>
             </tr>
           </table>
         </td>
       </tr>
+      <!-- Footer -->
       <tr>
         <td bgcolor="#0a2d52" style="padding:30px 40px;color:#ffffff">
           <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#ffffff;font-size:13px">

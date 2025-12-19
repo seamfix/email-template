@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Terminez Votre Renouvellement de Passeport</title>
+    <title>Application Submission — Reminder</title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
       <tr>
         <td bgcolor="#ffffff" align="center" style="padding:20px 0">
-          <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa-trio-logo.png" alt="Logos Ministère" style="max-width:90%;height:auto" />
+          <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa-trio-logo.png" alt="Ministry Logos" style="max-width:90%;height:auto" />
         </td>
       </tr>
       <tr>
@@ -16,34 +16,35 @@
           <table width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
               <td style="color:#333;font-size:16px;line-height:1.6;">
-                <p style="margin:0 0 15px 0;">Bonjour<% if (firstName) { %> <%= firstName %><% } %>,</p>
-                <p style="margin:0 0 12px 0;">Bienvenue sur la façon la plus simple de renouveler votre passeport béninois – totalement en ligne, sans rendez‑vous, sans déplacement !</p>
-                <p style="margin:0 0 12px 0;">Tout se fait depuis votre téléphone :</p>
-                <ul style="padding-left:20px;margin:0 0 12px 0;color:#333;font-size:15px;">
-                  <li>Prise d'empreintes sans contact</li>
-                  <li>Photo avec l'appareil de votre téléphone</li>
-                  <li>Signature numérique dans l'application</li>
-                  <li>Passeport livré chez vous en 4 semaines</li>
+                <p style="margin:0 0 15px 0;">Hello<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
+
+                <p style="margin:0 0 12px 0;">You haven't submitted your application yet.</p>
+                <p style="margin:0 0 12px 0;">Passport production can't begin until you submit with your IC.</p>
+
+                <p style="margin:16px 0 8px 0;font-weight:bold;">To submit:</p>
+                <ul style="margin:0 0 12px 20px;padding:0;color:#333;">
+                  <li>Get your Consular Registration Number (IC)</li>
+                  <li>Enter it on the preview page in the app</li>
+                  <li>The system validates your CRN</li>
+                  <li>Submit button enables</li>
+                  <li>Click Submit</li>
                 </ul>
-                <p style="margin:0 0 12px 0;">Aucune visite à l'ambassade. Aucun rendez‑vous biométrique. Aucun déplacement.</p>
-                <p style="margin:0 0 18px 0;">Votre demande est sauvegardée, vous pouvez la terminer quand cela vous convient.</p>
-                
-                
-                <table border="0" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+
+                <p style="margin:0 0 12px 0;">Need help getting your IC? Click on the <span style="color:#0c3b63;text-decoration:none">[IC Instructions Link]</span> or contact support at <a href="mailto:ediaspora@gouv.bj" style="color:#0c3b63;text-decoration:none">ediaspora@gouv.bj</a>. The sooner you submit, the sooner you get your passport!</p>
+
+                <p style="margin:0 0 12px 0;"><strong>Target delivery:</strong> 4 weeks after submission.</p>
+
+                <table border="0" cellpadding="0" cellspacing="0" style="margin-top:16px;">
                   <tr>
-                    <td align="center" bgcolor="#32a343" style="border-radius:6px;">
-                      <a href="com.sfx.mfa.govsmart://"
-                         style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
-                        OPEN APP
-                      </a>
+                    <td align="center" bgcolor="#0b5fff" style="border-radius:6px;">
+                      <a href="<%= typeof actionUrl === 'string' ? actionUrl : '#' %>" style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold">SUBMIT APPLICATION</a>
                     </td>
                   </tr>
                 </table>
 
-                <% if (supportEmail) { %>
-                  <p style="font-size:13px;color:#555;margin:0 0 5px 0;">Aide : <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
-                <% } %>
-                <p style="font-size:12px;color:#888;margin-top:30px;">Si vous avez déjà terminé, ignorez ce message.</p>
+                <p style="font-size:13px;color:#555;margin:16px 0 5px 0;">If the button doesn't work, copy and paste this link into your browser:<br/>
+                  <span><%= typeof actionUrl === 'string' ? actionUrl : '' %></span>
+                </p>
               </td>
             </tr>
           </table>
@@ -57,7 +58,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
                     <td width="50%" valign="middle">
-                      <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa_logo.png" alt="Logo MFA" style="height:45px" />
+                      <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa_logo.png" alt="MFA Logo" style="height:45px" />
                     </td>
                     <td width="50%" align="right" valign="middle">
                       <a href="https://www.linkedin.com/company/benin-diplomatie/" style="text-decoration:none">
@@ -72,7 +73,7 @@
               <td style="padding-top:20px;font-size:13px;line-height:1.5">© Ministère des affaires étrangères – <%= new Date().getFullYear().toString() %><br />Boulevard de la Marina, Cadjehoun, Cotonou</td>
             </tr>
             <tr>
-              <td style="padding-top:20px;font-size:16px;font-weight:bold">Téléchargez l'application ePass</td>
+              <td style="padding-top:20px;font-size:16px;font-weight:bold">Get the ePass app</td>
             </tr>
             <tr>
               <td style="padding-top:10px">
@@ -92,10 +93,7 @@
               </td>
             </tr>
             <tr>
-              <td align="center">
-                <span style="font-size:12px;vertical-align:middle">Propulsé par</span>
-                <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Logo Seamfix" />
-              </td>
+              <td align="center"><span style="font-size:12px;vertical-align:middle">Powered by</span><img src="https://govsmart-dev.seamfix.com.ng/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Seamfix Logo" /></td>
             </tr>
           </table>
         </td>
