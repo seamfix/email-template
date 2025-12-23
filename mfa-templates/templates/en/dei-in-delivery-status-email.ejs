@@ -77,8 +77,9 @@
                   padding-bottom: 20px;
                 "
               >
-              Your passport has been shipped and is now on its way to the delivery address you selected - 
-              <strong><%= address %>.</strong>
+              Your passport has been shipped and is now on its way to the delivery address you selected 
+              <% if (typeof address !== 'undefined' && address) { %> 
+              - <strong><%= address %></strong><% } %>.
               You will be contacted shortly by the courier service.
               </td>
             </tr>
