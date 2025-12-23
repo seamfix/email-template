@@ -77,8 +77,9 @@
                   padding-bottom: 20px;
                 "
               >
-              Votre passeport a été expédié et est en route vers l'adresse de livraison que vous avez sélectionnée - 
-              <strong><%= address %>.</strong>
+              Votre passeport a été expédié et est en route vers l'adresse de livraison que vous avez sélectionnée 
+              <% if (typeof address !== 'undefined' && address) { %> 
+              - <strong><%= address %></strong><% } %>.
               Vous serez contacté prochainement par le service de messagerie.
               </td>
             </tr>
