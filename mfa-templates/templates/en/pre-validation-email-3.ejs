@@ -1,108 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Final Validation Reminder</title>
-	</head>
-	<body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
-		<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
-			<tr>
-				<td bgcolor="#ffffff" align="center" style="padding:20px 0">
-					<img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa-trio-logo.png" alt="Ministry Logos" style="max-width:90%;height:auto" />
-				</td>
-			</tr>
-			<tr>
-				<td bgcolor="#ffffff" style="padding:30px 40px;">
-					<table width="100%" border="0" cellpadding="0" cellspacing="0">
-						<tr>
-							<td style="color:#333;font-size:16px;line-height:1.6;">
-								<p style="margin:0 0 15px 0;">Hello<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
-								<p style="margin:0 0 12px 0;">Quick nudge — you’re just one step away from finishing your validation.</p>
-								<p style="margin:0 0 12px 0;">Review the last few details, proceed to payment, and complete biometrics from your phone — fast and fully online.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Continue Application</title>
+  </head>
+  <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding:20px 0">
+          <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa-trio-logo.png" alt="Ministry Logos" style="max-width:90%;height:auto" />
+        </td>
+      </tr>
 
-								<ul style="margin:12px 0 12px 20px;padding:0;color:#333">
-									<li style="margin-bottom:6px">❌ No scheduling.</li>
-									<li style="margin-bottom:6px">❌ No appointments.</li>
-									<li style="margin-bottom:6px">❌ No waiting.</li>
-								</ul>
+      <tr>
+        <td bgcolor="#ffffff" style="padding:30px 40px;">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="color:#333;font-size:16px;line-height:1.6;">
+                <p style="margin:0 0 15px 0;">Hello<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
 
-								<p style="margin:0 0 12px 0;">Finish now — it takes less than 10 minutes.</p>
+                <p style="margin:0 0 12px 0;">Your passport information is partially complete, and your information is saved. Whenever you're ready to continue, we're here!</p>
 
+                <p style="margin:0 0 12px 0;">Once completely filled out and paid, you can complete your entire biometric capture from your phone.</p>
 
+                <ul style="margin:12px 0 12px 20px;padding:0;color:#333">
+                  <li style="margin-bottom:6px">❌ No travel</li>
+                  <li style="margin-bottom:6px">❌ No appointments</li>
+                </ul>
 
-								<table border="0" cellpadding="0" cellspacing="0" style="margin-top:10px;">
-									<tr>
-										<td align="center" bgcolor="#32a343" style="border-radius:6px;">
-											<a href="com.sfx.mfa.govsmart://"
-											   style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
-												CONTINUE APPLICATION
-											</a>
-										</td>
-									</tr>
-								</table>
+                <p style="margin:0 0 12px 0;">Just your phone camera and 10 minutes.</p>
 
-								<p style="font-size:13px;color:#555;margin:16px 0 5px 0;">If the button doesn't work, copy and paste this link into your browser:<br/>
-									<span><%= typeof actionUrl === 'string' ? actionUrl : '' %></span>
-								</p>
+                <table border="0" cellpadding="0" cellspacing="0" style="margin-top:15px;">
+                  <tr>
+                    <td align="center" bgcolor="#32a343" style="border-radius:6px;">
+                      <a href="com.sfx.mfa.govsmart://"
+                         style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
+                        CONTINUE APPLICATION
+                      </a>
+                    </td>
+                  </tr>
+                </table>
 
-								<% if (typeof supportEmail === 'string' && supportEmail) { %>
-									<p style="font-size:13px;color:#555;margin:0 0 5px 0;">Help: <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
-								<% } else { %>
-									<p style="font-size:13px;color:#555;margin:0 0 5px 0;">Help: <a href="mailto:support@govsmart.gov.ng" style="color:#0c3b63;text-decoration:none">support@govsmart.gov.ng</a></p>
-								<% } %>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td bgcolor="#0a2d52" style="padding:30px 40px;color:#ffffff">
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#ffffff;font-size:13px">
-						<tr>
-							<td>
-								<table border="0" cellpadding="0" cellspacing="0" width="100%">
-									<tr>
-										<td width="50%" valign="middle">
-											<img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa_logo.png" alt="MFA Logo" style="height:45px" />
-										</td>
-										<td width="50%" align="right" valign="middle">
-											<a href="https://www.linkedin.com/company/benin-diplomatie/" style="text-decoration:none">
-												<img style="height:24px;margin:0 5px" src="https://govsmart-dev.seamfix.com.ng/assets/icon/linkedIn_icon.png" alt="LinkedIn" />
-											</a>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr>
-							<td style="padding-top:20px;font-size:13px;line-height:1.5">© Ministère des affaires étrangères – <%= new Date().getFullYear().toString() %><br />Boulevard de la Marina, Cadjehoun, Cotonou</td>
-						</tr>
-						<tr>
-							<td style="padding-top:20px;font-size:16px;font-weight:bold">Get the ePass app</td>
-						</tr>
-						<tr>
-							<td style="padding-top:10px">
-								<a href="https://apps.apple.com/app/govsmart"><img style="height:40px;margin-right:10px" src="https://govsmart-dev.seamfix.com.ng/assets/icon/apple-store.png" alt="App Store" /></a>
-								<a href="https://play.google.com/store/apps/details?id=com.govsmart"><img style="height:40px" src="https://govsmart-dev.seamfix.com.ng/assets/icon/google-play.png" alt="Google Play" /></a>
-							</td>
-						</tr>
-						<tr>
-							<td style="padding-top:30px;padding-bottom:20px">
-								<table border="0" cellpadding="0" cellspacing="0" width="100%">
-									<tr>
-										<td width="33.33%" height="5px" bgcolor="#d92432"></td>
-										<td width="33.33%" height="5px" bgcolor="#f5c717"></td>
-										<td width="33.33%" height="5px" bgcolor="#32a343"></td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr>
-							<td align="center"><span style="font-size:12px;vertical-align:middle">Powered by</span><img src="https://govsmart-dev.seamfix.com.ng/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Seamfix Logo" /></td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-	</body>
+                <p style="font-size:13px;color:#555;margin:16px 0 5px 0;">If the button doesn't work, copy and paste this link into your browser:<br/>
+                  <span><%= typeof actionUrl === 'string' ? actionUrl : '' %></span>
+                </p>
+
+                <% if (typeof supportEmail === 'string' && supportEmail) { %>
+                  <p style="font-size:13px;color:#555;margin:0 0 5px 0;">Help: <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
+                <% } else { %>
+                  <p style="font-size:13px;color:#555;margin:0 0 5px 0;">Help: <a href="mailto:support@govsmart.gov.ng" style="color:#0c3b63;text-decoration:none">support@govsmart.gov.ng</a></p>
+                <% } %>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td bgcolor="#0a2d52" style="padding:30px 40px;color:#ffffff">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#ffffff;font-size:13px">
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="50%" valign="middle">
+                      <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa_logo.png" alt="MFA Logo" style="height:45px" />
+                    </td>
+                    <td width="50%" align="right" valign="middle">
+                      <a href="https://www.linkedin.com/company/benin-diplomatie/" style="text-decoration:none">
+                        <img style="height:24px;margin:0 5px" src="https://govsmart-dev.seamfix.com.ng/assets/icon/linkedIn_icon.png" alt="LinkedIn" />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:20px;font-size:13px;line-height:1.5">© Ministère des affaires étrangères – <%= new Date().getFullYear().toString() %><br />Boulevard de la Marina, Cadjehoun, Cotonou</td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:20px;font-size:16px;font-weight:bold">Get the ePass app</td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:10px">
+                <a href="https://apps.apple.com/app/govsmart"><img style="height:40px;margin-right:10px" src="https://govsmart-dev.seamfix.com.ng/assets/icon/apple-store.png" alt="App Store" /></a>
+                <a href="https://play.google.com/store/apps/details?id=com.govsmart"><img style="height:40px" src="https://govsmart-dev.seamfix.com.ng/assets/icon/google-play.png" alt="Google Play" /></a>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:30px;padding-bottom:20px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="33.33%" height="5px" bgcolor="#d92432"></td>
+                    <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
+                    <td width="33.33%" height="5px" bgcolor="#32a343"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center"><span style="font-size:12px;vertical-align:middle">Powered by</span><img src="https://govsmart-dev.seamfix.com.ng/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Seamfix Logo" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
