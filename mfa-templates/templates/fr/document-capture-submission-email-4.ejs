@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Capturez votre photo de portrait pour continuer</title>
+    <title>Documents manquants - Connectez-vous pour finaliser votre demande</title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
@@ -23,35 +23,30 @@
 
                 <p style="margin:0 0 15px 0;">Bonjour<% if (firstName) { %> <%= firstName %><% } %>,</p>
 
-                <p style="margin:0 0 15px 0;">Vous progressez !</p>
+                <p style="margin:0 0 15px 0;">Vous avez terminé 2 des 6 étapes. Continuons sur cette lancée !</p>
 
-                <p style="margin:0 0 15px 0;">Le scan de votre passeport est terminé. Passons maintenant à l’étape 2 : <strong>Photo de portrait (2 minutes)</strong>.</p>
+                <p style="margin:0 0 15px 0;">Étape 3 : Télécharger les documents requis (1 minute)</p>
 
-                <p style="margin:0 0 10px 0;"><strong>Des difficultés avec la qualité de la photo&nbsp;?</strong></p>
+                <p style="margin:0 0 10px 0;">Requis:</p>
 
                 <ul style="margin:0 0 20px 20px;padding:0;">
-                  <li>📌 Utilisez la lumière naturelle (évitez les lumières fortes au plafond)</li>
-                  <li>📌 Nettoyez l’objectif de votre téléphone</li>
-                  <li>📌 Placez-vous devant un mur blanc et uni</li>
-                  <li>📌 Demandez à quelqu’un de prendre la photo pour vous</li>
+                  <li>📌 Certificat de naissance ANIP (obligatoire)</li>
+                  <li>📌 Certificat d'identification personnelle</li>
+                  <li>📌 Ancien passeport</li>
+                  <li>📌 Certificat d'autorisation parentale (pour une demande concernant un enfant)</li>
+                  <li>📌 Si vous êtes né à l'étranger, vous devrez fournir le certificat national de vos parents et votre acte de naissance délivré par votre pays de naissance</li>
+                  <li>📌 Photo numérique (une photo numérique nette et professionnelle sur fond blanc prise en studio)</li>
                 </ul>
 
-                <p style="margin:0 0 15px 0;">Regardez le tutoriel : <a href="#" style="color:#0c3b63;text-decoration:none;"><strong>Lien du tutoriel vidéo</strong></a></p>
+                <p style="margin:0 0 15px 0;">Besoin d'aide pour obtenir vos documents ? Contactez l'assistance sur <a href="mailto:ediaspora@gouv.bj" style="color:#0c3b63;text-decoration:none;">ediaspora@gouv.bj</a></p>
 
-                <p style="margin:0 0 15px 0;">L’application validera automatiquement votre photo et vous indiquera si elle est acceptable.</p>
-
-                <p style="margin:0 0 15px 0;">Besoin d’aide&nbsp;? Contactez notre équipe d’assistance : <a href="mailto:ediaspora@gouv.bj" style="color:#0c3b63;text-decoration:none;">ediaspora@gouv.bj</a></p>
-
-                <p style="margin:0 0 25px 0;">Encore <strong>4 étapes</strong> et vous aurez terminé&nbsp;! On y est presque&nbsp;!</p>
+                <p style="margin:0 0 25px 0;">Après le téléchargement des documents : il ne reste plus qu’à saisir l’empreinte digitale, à signer et à soumettre le document ! Alors votre <% if (paymentAmount) { %> <%= paymentAmount %><% } %> processus de paiement.</p>
 
                 <!-- CTA -->
                 <table border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0">
                   <tr>
                     <td align="center" bgcolor="#0c3b63" style="border-radius:4px;padding:14px 30px">
-                    <a href="com.sfx.mfa.govsmart://"
-											   style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
-                   PRENDRE MA PHOTO D'IDENTITÉ
-											</a>                     
+                      <a href="<%= appDeepLink || '#' %>" style="color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;display:inline-block">TÉLÉCHARGER DES DOCUMENTS</a>
                     </td>
                   </tr>
                 </table>

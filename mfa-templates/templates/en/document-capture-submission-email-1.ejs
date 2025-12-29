@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Capture your portrait to continue</title>
+    <title>Almost halfway! Upload your documents (1 minute)</title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
@@ -23,41 +23,65 @@
 
                 <p style="margin:0 0 15px 0;">Hello<% if (firstName) { %> <%= firstName %><% } %>,</p>
 
-                <p style="margin:0 0 15px 0;">You're making progress!</p>
+                <p style="margin:0 0 15px 0;">You're doing great! Passport scanned ✓ Portrait captured ✓</p>
 
-                <p style="margin:0 0 15px 0;">Your passport scan is complete. Now let’s finish step 2: <strong>Portrait Photo (2 minutes)</strong>.</p>
+                <p style="margin:0 0 15px 0;">STEP 3 OF 6: Upload Required Documents <strong>(takes 1 minute)</strong>.</p>
 
-                <p style="margin:0 0 10px 0;"><strong>Having trouble with photo quality?</strong></p>
+                <p style="margin:0 0 10px 0;">Documents you need to upload:</p>
 
                 <ul style="margin:0 0 20px 20px;padding:0;">
-                  <li>📌 Use natural daylight (avoid harsh overhead lights)</li>
-                  <li>📌 Clean your phone camera lens</li>
-                  <li>📌 Stand against a plain white wall</li>
-                  <li>📌 Ask someone to take the photo for you</li>
+                  <li>📌 ANIP Birth Certificate (mandatory)</li>
+                  <li>📌 Personal Identification Certificate</li>
+                  <li>📌 Old Passport</li>
+                  <li>📌 Parental Authorization Certificate (For Child Application)</li>
+                  <li>📌 If you were born abroad, you’d need to provide Your parent’s National Certificate & Your Birth Certificate issues by your country of birth</li>
+                  <li>📌 Digital Photo (a clean, professional white background digital photo taken in a studio)</li>
                 </ul>
 
-                <p style="margin:0 0 15px 0;">Watch tutorial: <a href="#" style="color:#0c3b63;text-decoration:none;"><strong>Video Tutorial Link</strong></a></p>
+                <p style="margin:0 0 15px 0;">How to do it:</p>
 
-                <p style="margin:0 0 15px 0;">The app will validate your photo and let you know if it is acceptable.</p>
+                <ol style="margin:0 0 20px 20px;padding:0;">
+                  <li>Get your documents ready</li>
+                  <li>Use your phone camera to photograph each document or upload it as a pdf document if you already have it in soft copy</li>
+                  <li>Make sure text is clear and readable</li>
+                  <li>Upload through the app</li>
+                </ol>
 
-                <p style="margin:0 0 15px 0;">Need help? Contact our support team: <a href="mailto:ediaspora@gouv.bj" style="color:#0c3b63;text-decoration:none;">ediaspora@gouv.bj</a></p>
+                <p style="margin:0 0 15px 0;">Tips for clear document photos:</p>
 
-                <p style="margin:0 0 25px 0;">4 more steps after this and you’re done! Let’s go!</p>
+                <ol style="margin:0 0 20px 20px;padding:0;">
+                  <li>Lay document flat on table</li>
+                  <li>Take photo from directly above</li>
+                  <li>Ensure all edges are visible</li>
+                  <li>Good lighting, no shadows</li>
+                  <li>No glare or reflections</li>
+                </ol>
+
+                <p style="margin:0 0 10px 0;">After this: Only 3 steps left!</p>
+
+                <ul style="margin:0 0 20px 20px;padding:0;">
+                  <li>🎊 Passport scan (DONE!)</li>
+                  <li>🎊 Portrait photo (DONE!)</li>
+                  <li>Document upload (do this now - 1 min)</li>
+                  <li>Fingerprint capture (2 min)</li>
+                  <li>Signature (10 sec) & Submit</li>
+                </ul>
+
+                <p style="margin:0 0 10px 0;">You're halfway to completing the process</p>
 
                 <!-- CTA -->
                 <table border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0">
                   <tr>
                     <td align="center" bgcolor="#0c3b63" style="border-radius:4px;padding:14px 30px">
-                     <a href="com.sfx.mfa.govsmart://"
-											   style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
-                    CAPTURE PORTRAIT
-											</a> 
+                      <a href="<%= appDeepLink || '#' %>" style="color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;display:inline-block">UPLOAD DOCUMENTS NOW</a>
                     </td>
                   </tr>
                 </table>
 
                 <% if (supportEmail) { %>
-                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">Need help? Contact: <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
+                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">Need help? Contact: 
+                    <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a>
+                  </p>
                 <% } %>
 
               </td>
@@ -90,7 +114,7 @@
 
             <tr>
               <td style="padding-top:20px;font-size:13px;line-height:1.5">
-                © Ministère des affaires étrangères – <%= new Date().getFullYear().toString() %><br />
+                © Ministry of Foreign Affairs – <%= new Date().getFullYear().toString() %><br />
                 Boulevard de la Marina, Cadjehoun, Cotonou
               </td>
             </tr>

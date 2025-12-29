@@ -2,14 +2,14 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Scan du Passeport Toujours en Attente</title>
+    <title>Presque à mi-chemin ! Téléchargez vos documents (1 minute)</title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
       <!-- Header with Logos -->
       <tr>
         <td bgcolor="#ffffff" align="center" style="padding:20px 0">
-          <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa-trio-logo.png" alt="Logos du Ministère" style="max-width:90%;height:auto" />
+          <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa-trio-logo.png" alt="Logos Ministériels" style="max-width:90%;height:auto" />
         </td>
       </tr>
 
@@ -22,45 +22,64 @@
 
                 <p style="margin:0 0 15px 0;">Bonjour<% if (firstName) { %> <%= firstName %><% } %>,</p>
 
-                <p style="margin:0 0 15px 0;">Cela fait maintenant 24 heures que vous avez autorisé le paiement, mais vous n’avez toujours pas scanné votre passeport.</p>
+                <!-- CONTENU PRINCIPAL EN FRANÇAIS -->
+                <p style="margin:0 0 15px 0;">Tout se passe à merveille ! Passeport scanné ✓ Portrait pris ✓</p>
 
-                <p style="margin:0 0 20px 0;background-color:#fff3cd;padding:15px;border-left:4px;font-size:15px">
-                  <strong>⚠️ Rappel :</strong> Votre paiement est actuellement <strong>EN ATTENTE</strong> (et non débité) tant que vous n’avez pas terminé toutes les étapes biométriques.
-                </p>
+                <p style="margin:0 0 15px 0;">ÉTAPE 3 SUR 6 : Téléverser les documents requis <strong>(prend 1 minute)</strong>.</p>
 
-                <h2 style="color:#0c3b63;font-size:18px;margin:20px 0 12px 0;">Commencez par le scan du passeport (10 secondes) :</h2>
+                <p style="margin:0 0 10px 0;">Documents à télécharger :</p>
 
-                <ul style="padding-left:20px;margin:0 0 15px 0;color:#333;font-size:15px;">
-                  <li>Trouvez votre ancien passeport</li>
-                  <li>📌 Ouvrez l’application</li>
-                  <li>📌 Suivez les instructions à l’écran</li>
-                  <li>📌 Et c’est tout !</li>
+                <ul style="margin:0 0 20px 20px;padding:0;">
+                  <li>📌 Certificat de naissance ANIP (obligatoire)</li>
+                  <li>📌 Certificat d'identification personnelle</li>
+                  <li>📌 Ancien passeport</li>
+                  <li>📌 Certificat d'autorisation parentale (pour une demande concernant un enfant)</li>
+                  <li>📌 Si vous êtes né à l'étranger, vous devrez fournir le certificat national de vos parents et votre acte de naissance délivré par votre pays de naissance.</li>
+                  <li>📌 Photo numérique (une photo numérique nette et professionnelle sur fond blanc prise en studio)</li>
                 </ul>
 
-                <h3 style="color:#d92432;font-size:16px;margin:20px 0 10px 0;">Vous n’avez pas votre ancien passeport ?</h3>
+                <p style="margin:0 0 15px 0;">Comment procéder :</p>
 
-                <p style="margin:0 0 15px 0;">Vous en aurez besoin pour continuer. S’il est perdu ou endommagé, contactez notre équipe d’assistance :</p>
+                <ol style="margin:0 0 20px 20px;padding:0;">
+                  <li>Préparez vos documents</li>
+                  <li>Utilisez l'appareil photo de votre téléphone pour photographier chaque document ou téléchargez-le au format PDF si vous le possédez déjà sous forme numérique.</li>
+                  <li>Assurez-vous que le texte est clair et lisible.</li>
+                  <li>Téléchargez via l'application</li>
+                </ol>
 
-                <p style="margin:0 0 25px 0;font-size:15px;">
-                  <strong>📧 <a href="mailto:ediaspora@gouv.bj" style="color:#0c3b63;text-decoration:none">ediaspora@gouv.bj</a></strong> pour obtenir de l’aide
-                </p>
+                <p style="margin:0 0 15px 0;">Conseils pour des photos de documents nettes :</p>
+
+                <ol style="margin:0 0 20px 20px;padding:0;">
+                  <li>Déposez le document à plat sur la table.</li>
+                  <li>Prenez la photo directement du dessus.</li>
+                  <li>Assurez-vous que tous les bords soient visibles.</li>
+                  <li>Bon éclairage, pas d'ombres</li>
+                  <li>Aucun reflet ni éblouissement</li>
+                </ol>
+
+                <p style="margin:0 0 10px 0;">Après cela : Il ne reste plus que 3 étapes !</p>
+
+                <ul style="margin:0 0 20px 20px;padding:0;">
+                  <li>🎊 Numérisation du passeport (TERMINÉ !)</li>
+                  <li>🎊 Photo de portrait (TERMINÉE !)</li>
+                  <li>Téléchargement de documents (à faire maintenant - 1 min)</li>
+                  <li>Capture d'empreintes digitales (2 min)</li>
+                  <li>Signature (10 sec) et soumission</li>
+                </ul>
+
+                <p style="margin:0 0 10px 0;">Vous avez parcouru la moitié du chemin pour terminer le processus.</p>
 
                 <!-- CTA Button -->
                 <table border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0">
                   <tr>
                     <td align="center" bgcolor="#0c3b63" style="border-radius:4px;padding:14px 30px">
-                     <a href="com.sfx.mfa.govsmart://"
-											   style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
-											SCANNER LE PASSEPORT MAINTENANT
-											</a>                    </td>
+                      <a href="<%= appDeepLink || '#' %>" style="color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;display:inline-block">TÉLÉCHARGEZ VOS DOCUMENTS MAINTENANT</a>
+                    </td>
                   </tr>
                 </table>
 
                 <% if (supportEmail) { %>
-                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">
-                    Besoin d’aide ? Contactez : 
-                    <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a>
-                  </p>
+                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">Besoin d'aide ? Contactez : <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
                 <% } %>
 
               </td>
@@ -127,7 +146,7 @@
             <tr>
               <td align="center">
                 <span style="font-size:12px;vertical-align:middle">Propulsé par</span>
-                <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Logo Seamfix" />
+                <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Seamfix Logo" />
               </td>
             </tr>
 
