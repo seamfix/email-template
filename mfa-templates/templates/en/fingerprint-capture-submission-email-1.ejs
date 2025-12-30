@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Portrait photo pending - watch our tutorial</title>
+    <title>You're almost there! Fingerprint capture next (3 minutes)</title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
+      
       <!-- Header with Logos -->
       <tr>
         <td bgcolor="#ffffff" align="center" style="padding:20px 0">
@@ -22,39 +23,63 @@
 
                 <p style="margin:0 0 15px 0;">Hello<% if (firstName) { %> <%= firstName %><% } %>,</p>
 
-                <!-- NEW BODY -->
-                <p style="margin:0 0 15px 0;">You scanned your passport but haven't captured your portrait yet.</p>
+                <p style="margin:0 0 15px 0;">Fantastic progress so far!  You've completed 3 of 6 steps! </p>
 
-                <p style="margin:0 0 15px 0;">Watch this 1-minute tutorial on how to take the perfect passport photo with your phone: <a href="https://www.youtube.com/watch?v=JQnjyboW1CE" target="_blank" style="color:#0c3b63;text-decoration:none;"><strong>Video Tutorial Link</strong></a></p>
+                <p style="margin:0 0 15px 0;">STEP 4 OF 6: Fingerprint Capture <strong>(takes about 3 minutes)</strong></p>
 
-                <p style="margin:0 0 10px 0;"><strong>Quick tips:</strong></p>
+                <p style="margin:0 0 15px 0;">This is the most important step - and we've made it easy with contactless technology! 
+                  <a href="https://www.youtube.com/watch?v=_E5WCguzoT8" target="_blank" style="color:#0c3b63;text-decoration: underline;;"><strong>Fingerprint Video Tutorial Link</strong></a>
+                </p>
+
+                <p style="margin:0 0 10px 0;">What you'll do:</p>
 
                 <ul style="margin:0 0 20px 20px;padding:0;">
-                  <li>📌 Good lighting (daylight from window works great)</li>
-                  <li>📌 Plain background (stand against a white/light colored wall)</li>
-                  <li>📌 Remove glasses, hat, and accessories</li>
-                  <li>📌 Look directly at camera with neutral expression</li>
-                  <li>📌 Use a plain white background</li>
+                  <li>📌 Clean your phone camera </li>
+                  <li>📌 Follow the app's guided instructions</li>
+                  <li>📌 Place your fingers on a plain white surface</li>
                 </ul>
 
-                <p style="margin:0 0 15px 0;">It takes 2 minutes. The app will show you exactly how to capture a valid photo and will let you retake if needed.</p>
+                <p style="margin:0 0 15px 0;">The app captures your fingerprints automatically</p>
 
-                <p style="margin:0 0 25px 0;">You’re almost there. Keep going!</p>
+                <p style="margin:0 0 15px 0;"><strong>IMPORTANT TIPS FOR SUCCESS:</strong></p>
 
-                <!-- CTA Button -->
+                <ul style="margin:0 0 20px 20px;padding:0;">
+                  <li>⭐ Clean, dry fingers (wash and dry hands first)</li>
+                  <li>⭐ Clean phone camera(wipe with cloth)</li>
+                  <li>⭐ Get an A4 white paper if you do not have a white surface</li>
+                  <li>⭐ Follow the app's positioning guide</li>
+                  <li>⭐ Stay still during capture</li>
+                  <li>⭐ Good lighting helps</li>
+                </ul>
+
+                <p style="margin:0 0 15px 0;">Common issues and solutions:</p>
+
+                <ul style="margin:0 0 20px 20px;padding:0;">
+                  <li><strong>"Not capturing":</strong> Ensure that your hands are very dry and your prints are visible in your phone’s camera then try again </li>
+                  <li><strong>"Image unclear":</strong> Keep your hand steady and clean your phone’s camera. </li>
+                  <li><strong>"Getting an error":</strong> Check finger positioning, follow guide exactly</li>
+                </ul>
+
+                <p style="margin:0 0 10px 0;">After this step, you only need to capture your signature and submit!</p>
+
+                <p style="margin:0 0 15px 0;"> 
+                  <a href="https://www.youtube.com/watch?v=_E5WCguzoT8" target="_blank" style="color:#0c3b63;text-decoration: underline;"><strong>Watch the tutorial</strong></a>
+                  and start now!
+                </p>
+
+                <!-- CTA -->
                 <table border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0">
                   <tr>
                     <td align="center" bgcolor="#0c3b63" style="border-radius:4px;padding:14px 30px">
-                  <a href="com.sfx.mfa.govsmart://"
-											   style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
-                       TAKE PORTRAIT PHOTO
-											</a> 
+                      <a href="<%= appDeepLink || '#' %>" style="color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;display:inline-block">CAPTURE FINGERPRINTS NOW</a>
                     </td>
                   </tr>
                 </table>
 
                 <% if (supportEmail) { %>
-                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">Need help? Contact: <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
+                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">Need help? Contact: 
+                    <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a>
+                  </p>
                 <% } %>
 
               </td>
@@ -63,10 +88,11 @@
         </td>
       </tr>
 
-      <!-- Footer -->
+      <!-- Footer (unchanged) -->
       <tr>
         <td bgcolor="#0a2d52" style="padding:30px 40px;color:#ffffff">
           <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#ffffff;font-size:13px">
+            
             <tr>
               <td>
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -75,7 +101,7 @@
                       <img src="https://govsmart-dev.seamfix.com.ng/assets/icons/mfa_logo.png" alt="MFA Logo" style="height:45px" />
                     </td>
                     <td width="50%" align="right" valign="middle">
-                      <a href="https://www.linkedin.com/company/benin-diplomatie/" style="text-decoration:none">
+                      <a href="https://www.linkedin.com/company/benin-diplomatie/">
                         <img style="height:24px;margin:0 5px" src="https://govsmart-dev.seamfix.com.ng/assets/icon/linkedIn_icon.png" alt="LinkedIn" />
                       </a>
                     </td>
@@ -86,7 +112,7 @@
 
             <tr>
               <td style="padding-top:20px;font-size:13px;line-height:1.5">
-                © Ministère des affaires étrangères – <%= new Date().getFullYear().toString() %><br />
+                © Ministry of Foreign Affairs – <%= new Date().getFullYear().toString() %><br />
                 Boulevard de la Marina, Cadjehoun, Cotonou
               </td>
             </tr>
