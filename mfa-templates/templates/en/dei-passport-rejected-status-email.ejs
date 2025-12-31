@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update on your passport Request</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      font-family: Work Sans, Arial, sans-serif;
+      background-color: #f0f2f5;
+    "
+  >
+    <table
+      align="center"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      style="max-width: 600px; margin: 20px auto"
+    >
+      <!-- Header with Logos -->
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 20px 0">
+          <!-- Note: The provided image has three logos. This single image is used as a placeholder. -->
+          <img
+            src="<%= trioProductImageUrl %>"
+            alt="Ministry Logos"
+            style="max-width: 90%; height: auto"
+          />
+        </td>
+      </tr>
+
+      <!-- Main Content Body -->
+      <tr>
+        <td bgcolor="#ffffff" style="padding: 30px 40px">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <!-- Title -->
+            <tr>
+              <td
+                style="
+                  color: #0c3b63;
+                  font-family: Arial, sans-serif;
+                  font-size: 20px;
+                  font-weight: bold;
+                  padding-bottom: 10px;
+                "
+              >
+                Update on your passport Request
+              </td>
+            </tr>
+            <!-- Greeting -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-bottom: 15px;
+                "
+              >
+                Hello <% if (typeof name !== 'undefined' && name) { %> <%= name %><%
+                } %>,
+              </td>
+            </tr>
+            <!-- Introductory Text -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-bottom: 20px;
+                "
+              >
+                We regret to inform you that your passport renewal application for <strong><%= deiPushApplicationId %></strong> has been rejected. Please contact the DEI by phone 
+                <strong><%= deiContactNumber %></strong> 
+                or by email: 
+                <a
+                  href="mailto:<%= deiSupportEmail %>"
+                  style="color: #0056b3; text-decoration: none"
+                  ><%= deiSupportEmail %></a
+                >
+                for further information.
+              </td>
+            </tr>
+
+            <!-- Application Tracking ID -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-top: 5px;
+                  padding-bottom: 10px;
+                "
+              >
+                <strong>Application Tracking ID: <%= trackingId %></strong>
+              </td>
+            </tr>
+
+            <!-- Closing -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-top: 25px;
+                "
+              >
+                Regards,<br />
+                <strong>The ePass Team</strong>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td bgcolor="#0a2d52" style="padding: 30px 40px; color: #ffffff">
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="100%"
+            style="color: #ffffff; font-size: 13px"
+          >
+            <!-- Footer Top Row: Logo and Social Icons -->
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="50%" valign="middle">
+                      <img
+                        src="<%= productLogoUrl %>"
+                        alt="MFA Logo"
+                        style="height: 45px"
+                      />
+                    </td>
+                    <td width="50%" align="right" valign="middle">
+                      <a
+                        href="<%= linkedInLink || '#' %>"
+                        style="text-decoration: none"
+                      >
+                        <img
+                          style="height: 24px; margin: 0 5px"
+                          src="<%= linkedInGreenLogoUrl %>"
+                          alt="LinkedIn"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Footer Address -->
+            <tr>
+              <td style="padding-top: 20px; font-size: 13px; line-height: 1.5">
+                © Ministère des affaires étrangères – <%= new
+                Date().getFullYear().toString() %><br />
+                Boulevard de la Marina, Cadjehoun, Cotonou
+              </td>
+            </tr>
+            <!-- App Links -->
+            <tr>
+              <td style="padding-top: 20px; font-size: 16px; font-weight: bold">
+                Get the ePass app
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px">
+                <a href="<%= appleStoreLink || '#' %>">
+                  <img
+                    style="height: 40px; margin-right: 10px"
+                    src="<%= appleStoreLogoUrl %>"
+                    alt="App Store"
+                  />
+                </a>
+                <a
+                  href="<%= playStoreLink || '#' %>"
+                >
+                  <img
+                    style="height: 40px"
+                    src="<%= playStoreLogoUrl %>"
+                    alt="Google Play"
+                  />
+                </a>
+              </td>
+            </tr>
+            <!-- Color Bar -->
+            <tr>
+              <td style="padding-top: 30px; padding-bottom: 20px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="33.33%" height="5px" bgcolor="#d92432"></td>
+                    <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
+                    <td width="33.33%" height="5px" bgcolor="#32a343"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Powered By -->
+            <tr>
+              <td align="center">
+                <span style="font-size: 12px; vertical-align: middle"
+                  >Powered by</span
+                >
+                <img
+                  src="<%= seamfixLogoUrl %>"
+                  style="margin-left: 8px; height: 20px; vertical-align: middle"
+                  alt="Seamfix Logo"
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
