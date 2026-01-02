@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Capture your portrait to continue</title>
+    <title>Complete your portrait photo - tutorial included</title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
@@ -23,35 +23,32 @@
 
                 <p style="margin:0 0 15px 0;">Hello<% if (firstName) { %> <%= firstName %><% } %>,</p>
 
-                <p style="margin:0 0 15px 0;">You're making progress!</p>
+                <p style="margin:0 0 15px 0;">Your passport scan is complete, but your portrait photo is still pending.</p>
 
-                <p style="margin:0 0 15px 0;">Your passport scan is complete. Now let’s finish step 2: <strong>Portrait Photo (2 minutes)</strong>.</p>
+                <p style="margin:0 0 15px 0;">This step takes just <strong>2 minutes</strong>. Watch our tutorial for guidance: 
+                  <a href="https://www.youtube.com/watch?v=JQnjyboW1CE" target="_blank"  style="color:#0c3b63;text-decoration:none;"><strong>Video Tutorial Link</strong></a>
+                </p>
 
-                <p style="margin:0 0 10px 0;"><strong>Having trouble with photo quality?</strong></p>
+                <p style="margin:0 0 10px 0;">The app guides you through:</p>
 
                 <ul style="margin:0 0 20px 20px;padding:0;">
-                  <li>📌 Use natural daylight (avoid harsh overhead lights)</li>
-                  <li>📌 Clean your phone camera lens</li>
-                  <li>📌 Stand against a plain white wall</li>
-                  <li>📌 Ask someone to take the photo for you</li>
+                  <li>📌 Proper positioning</li>
+                  <li>📌 Lighting check</li>
+                  <li>📌 Expression guidance</li>
                 </ul>
 
-                <p style="margin:0 0 15px 0;">Watch tutorial: <a href="https://www.youtube.com/watch?v=JQnjyboW1CE" target="_blank" style="color:#0c3b63;text-decoration:none;"><strong>Video Tutorial Link</strong></a></p>
+                <p style="margin:0 0 15px 0;">After you capture your portrait, you’ll have 3 more quick steps (document, fingerprint, signature), and then your payment is processed automatically.</p>
 
-                <p style="margin:0 0 15px 0;">The app will validate your photo and let you know if it is acceptable.</p>
-
-                <p style="margin:0 0 15px 0;">Need help? Contact our support team: <a href="mailto:ediaspora@gouv.bj" style="color:#0c3b63;text-decoration:none;">ediaspora@gouv.bj</a></p>
-
-                <p style="margin:0 0 25px 0;">4 more steps after this and you’re done! Let’s go!</p>
+                <p style="margin:0 0 25px 0;">Let's finish this!</p>
 
                 <!-- CTA -->
                 <table border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0">
                   <tr>
                     <td align="center" bgcolor="#0c3b63" style="border-radius:4px;padding:14px 30px">
-                     <a href="<%= appDeepLink || '#' %>"
+                    <a href="<%= appDeepLink || '#' %>"
 											   style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
-                    CAPTURE PORTRAIT
-											</a>                     
+												COMPLETE PORTRAIT NOW
+											</a> 
                     </td>
                   </tr>
                 </table>
