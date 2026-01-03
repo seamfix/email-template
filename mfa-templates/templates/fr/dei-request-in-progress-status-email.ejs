@@ -1,15 +1,15 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notification of Passport Application Status</title>
+    <title>Mise à jour concernant votre demande de passeport</title>
   </head>
   <body
     style="
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: Work Sans, Arial, sans-serif;
       background-color: #f0f2f5;
     "
   >
@@ -24,9 +24,10 @@
       <!-- Header with Logos -->
       <tr>
         <td bgcolor="#ffffff" align="center" style="padding: 20px 0">
+          <!-- Note: The provided image has three logos. This single image is used as a placeholder. -->
           <img
-            src="<%= logoUrl %>"
-            alt="Ministry Logos"
+            src="<%= trioProductImageUrl %>"
+            alt="Logos du ministère"
             style="max-width: 90%; height: auto"
           />
         </td>
@@ -34,27 +35,22 @@
 
       <!-- Main Content Body -->
       <tr>
-        <td bgcolor="#ffffff" style="padding: 0 40px 30px 40px">
+        <td bgcolor="#ffffff" style="padding: 30px 40px">
           <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            <!-- Title Banner -->
+            <!-- Title -->
             <tr>
               <td
-                align="center"
-                bgcolor="#eaf2ff"
                 style="
-                  padding: 25px;
-                  border-radius: 8px;
                   color: #0c3b63;
                   font-family: Arial, sans-serif;
-                  font-size: 22px;
+                  font-size: 20px;
                   font-weight: bold;
-                  line-height: 1.4;
+                  padding-bottom: 10px;
                 "
               >
-                Notification of Passport Application Status
+                Mise à jour concernant votre demande de passeport
               </td>
             </tr>
-
             <!-- Greeting -->
             <tr>
               <td
@@ -63,14 +59,11 @@
                   font-family: Arial, sans-serif;
                   font-size: 16px;
                   line-height: 1.6;
-                  padding: 30px 0 15px 0;
+                  padding-bottom: 15px;
                 "
               >
-                Hello  <% if (typeof userFullName !== 'undefined' && userFullName) { %>
-    <%= userFullName %>
-  <% } else if (typeof firstname !== 'undefined' && firstname && typeof lastname !== 'undefined' && lastname) { %>
-    <%= firstname %> <%= lastname %>
-  <% } %>,
+                Bonjour <% if (typeof name !== 'undefined' && name) { %> <%= name
+                %><% } %>,
               </td>
             </tr>
             <!-- Introductory Text -->
@@ -81,103 +74,78 @@
                   font-family: Arial, sans-serif;
                   font-size: 16px;
                   line-height: 1.6;
-                  padding-bottom: 5px;
-                "
-              >
-                Thank you for submitting your application for an international
-                passport.
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="
-                  color: #333333;
-                  font-family: Arial, sans-serif;
-                  font-size: 16px;
-                  line-height: 1.6;
                   padding-bottom: 20px;
                 "
               >
-                After careful review, we regret to inform you that your
-                application has not been approved at this time due to the
-                following reason(s):
+                Veuillez noter que votre demande de passeport est actuellement en cours d'examen. Nous vous informerons dès que votre passeport sera disponible.
               </td>
             </tr>
 
-            <!-- Rejection Reason Box -->
-            <tr>
-              <td style="padding: 10px 0">
-                <div
-                  style="
-                    background-color: #eaf2ff;
-                    border-left: 4px solid #0c3b63;
-                    padding: 15px 20px;
-                  "
-                >
-                  <p style="margin: 0">
-                    <strong><%= rejectReasonType %>:</strong> <%= reason %>
-                  </p>
-                </div>
-              </td>
-            </tr>
-
-            <!-- Follow-up Instructions -->
+            <!-- Application Tracking ID -->
             <tr>
               <td
                 style="
-                  padding-top: 20px;
                   color: #333333;
                   font-family: Arial, sans-serif;
                   font-size: 16px;
                   line-height: 1.6;
+                  padding-top: 5px;
+                  padding-bottom: 10px;
                 "
               >
-                You are encouraged to review your application details and the
-                required documentation before reapplying. If you believe this
-                decision was made in error or if you have any questions
-                regarding the reason for rejection, please feel free to contact
-                our support team at
+                <strong>Identifiant de suivi de l'application: <%= trackingId %></strong>
+              </td>
+            </tr>
+
+            <!-- Support Text -->
+            <tr>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-top: 5px;
+                  padding-bottom: 10px;
+                "
+              >
+                Pour toute question ou demande de renseignements, veuillez nous envoyer un courriel à:
                 <a
                   href="mailto:<%= supportEmail %>"
                   style="color: #0056b3; text-decoration: none"
                   ><%= supportEmail %></a
-                >.
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="
-                  padding-top: 20px;
-                  color: #333333;
-                  font-family: Arial, sans-serif;
-                  font-size: 16px;
-                  line-height: 1.6;
-                "
-              >
-                We understand that this news may be disappointing, and we are
-                here to support you through the reapplication process should you
-                choose to proceed.
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="
-                  padding-top: 20px;
-                  color: #333333;
-                  font-family: Arial, sans-serif;
-                  font-size: 16px;
-                  line-height: 1.6;
-                "
-              >
-                Thank you for your understanding.
+                >
               </td>
             </tr>
 
+             <!-- Thank you Text -->
+             <tr>
+                <td
+                  style="
+                    color: #333333;
+                    font-family: Arial, sans-serif;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    padding-bottom: 20px;
+                  "
+                >
+                Merci de votre patience.
+                </td>
+              </tr>
+
             <!-- Closing -->
             <tr>
-              <td style="font-size: 16px; line-height: 1.6; padding-top: 25px">
-                Warm regards,<br />
-                <strong>The DEI Team</strong>
+              <td
+                style="
+                  color: #333333;
+                  font-family: Arial, sans-serif;
+                  font-size: 16px;
+                  line-height: 1.6;
+                  padding-top: 25px;
+                "
+              >
+                Salutations,<br />
+                <strong>L'équipe ePass</strong>
               </td>
             </tr>
           </table>
@@ -201,15 +169,14 @@
                   <tr>
                     <td width="50%" valign="middle">
                       <img
-                        src="<%= mfaLogo %>"
-                        alt="MFA Logo"
+                        src="<%= productLogoUrl %>"
+                        alt="Logo MAE"
                         style="height: 45px"
                       />
                     </td>
                     <td width="50%" align="right" valign="middle">
                       <a
-                        href="https://www.linkedin.com/company/benin-diplomatie/"
-                        target="_blank"
+                        href="<%= linkedInLink || '#' %>"
                         style="text-decoration: none"
                       >
                         <img
@@ -235,19 +202,21 @@
             <!-- App Links -->
             <tr>
               <td style="padding-top: 20px; font-size: 16px; font-weight: bold">
-                Get the ePass app
+                Obtenez l'application ePass
               </td>
             </tr>
             <tr>
               <td style="padding-top: 10px">
-                <a href="<%= appleStoreLink || '#' %>" target="_blank">
+                <a href="<%= appleStoreLink || '#' %>">
                   <img
                     style="height: 40px; margin-right: 10px"
                     src="<%= appleStoreLogoUrl %>"
                     alt="App Store"
                   />
                 </a>
-                <a href="<%= playStoreLink || '#' %>" target="_blank">
+                <a
+                  href="<%= playStoreLink || '#' %>"
+                >
                   <img
                     style="height: 40px"
                     src="<%= playStoreLogoUrl %>"
@@ -272,12 +241,12 @@
             <tr>
               <td align="center">
                 <span style="font-size: 12px; vertical-align: middle"
-                  >Powered by</span
+                  >Propulsé par</span
                 >
                 <img
                   src="<%= seamfixLogoUrl %>"
                   style="margin-left: 8px; height: 20px; vertical-align: middle"
-                  alt="Seamfix Logo"
+                  alt="Logo Seamfix"
                 />
               </td>
             </tr>

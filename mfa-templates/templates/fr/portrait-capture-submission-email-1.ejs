@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>"Super ! Maintenant, prenez votre portrait (2 minutes)"</title>
+  </head>
+  <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
+      <!-- Header with Logos -->
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding:20px 0">
+          <img src="https://epassportal.gouv.bj/assets/icons/mfa-trio-logo.png" alt="Logos Ministériels" style="max-width:90%;height:auto" />
+        </td>
+      </tr>
+
+      <!-- Main Content -->
+      <tr>
+        <td bgcolor="#ffffff" style="padding:30px 40px;">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="color:#333;font-size:16px;line-height:1.6;">
+
+                <p style="margin:0 0 15px 0;">Bonjour<% if (firstName) { %> <%= firstName %><% } %>,</p>
+
+                <!-- CONTENU PRINCIPAL EN FRANÇAIS -->
+                <p style="margin:0 0 15px 0;">Excellent travail de numérisation de votre passeport !</p>
+
+                <h2 style="color:#0c3b63;font-size:18px;margin:20px 0 12px 0;">ÉTAPE 2 SUR 6 : Photo de portrait (prend 2 minutes).</h2>
+
+                <p style="margin:0 0 15px 0;">Prenons maintenant votre photo d'identité avec l'appareil photo de votre téléphone. Pas besoin de photographe professionnel !</p>
+
+                <p style="margin:0 0 10px 0;"><strong>Ce que vous ferez :</strong></p>
+
+                <ul style="margin:0 0 15px 20px;padding:0;">
+                  <li>📌 Trouvez un bon éclairage (la lumière naturelle est idéale).</li>
+                  <li>📌 Fond uni (un mur blanc est parfait)</li>
+                  <li>📌 Positionnez votre visage dans le cadre.</li>
+                </ul>
+
+                <p style="margin:0 0 15px 0;">L'application vous guidera tout au long du processus.</p>
+
+                <p style="margin:0 0 15px 0;">Regardez ce tutoriel rapide : <a href="https://www.youtube.com/watch?v=JQnjyboW1CE" target="_blank" style="color:#0c3b63;text-decoration:none;"><strong>Lien du didacticiel vidéo</strong></a></p>
+
+                <p style="margin:0 0 10px 0;"><strong>Conseils pour obtenir les meilleurs résultats :</strong></p>
+
+                <ul style="margin:0 0 20px 20px;padding:0;">
+                  <li>📌 Retirer les lunettes et le chapeau</li>
+                  <li>📌 Faites face directement à la caméra</li>
+                  <li>📌 Expression neutre</li>
+                  <li>📌 Aucune ombre sur votre visage ni sous votre menton</li>
+                </ul>
+
+                <h3 style="color:#0c3b63;font-size:16px;margin:20px 0 10px 0;">Après cela : 4 étapes rapides supplémentaires à terminer !</h3>
+
+                <ul style="margin:0 0 20px 20px;padding:0;">
+                  <li>🎊 Numérisation du passeport (TERMINÉ !)</li>
+                  <li>📌 Portrait photo (do this now - 2 min)</li>
+                  <li>📌 Photo de portrait (à faire maintenant - 2 min)</li>
+                  <li>📌 Capture d'empreintes digitales (3 min)</li>
+                  <li>📌 Signature (10 secondes) puis Soumettre</li>
+                </ul>
+
+                <p style="margin:0 0 25px 0;">Your payment processes after you complete all 5 capture steps!</p>
+
+                <!-- CTA Button -->
+                <table border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0">
+                  <tr>
+                    <td align="center" bgcolor="#0c3b63" style="border-radius:4px;padding:14px 30px">
+                    <a href="<%= appDeepLink || '#' %>"
+											   style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold;">
+                         CAPTUREZ VOTRE PORTRAIT MAINTENANT
+											</a> 
+                    </td>
+                  </tr>
+                </table>
+
+                <% if (supportEmail) { %>
+                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">Besoin d'aide ? Contactez : <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
+                <% } %>
+
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td bgcolor="#0a2d52" style="padding:30px 40px;color:#ffffff">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#ffffff;font-size:13px">
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="50%" valign="middle">
+                      <img src="https://epassportal.gouv.bj/assets/icons/mfa_logo.png" alt="Logo MFA" style="height:45px" />
+                    </td>
+                    <td width="50%" align="right" valign="middle">
+                      <a href="https://www.linkedin.com/company/benin-diplomatie/" style="text-decoration:none">
+                        <img style="height:24px;margin:0 5px" src="https://epassportal.gouv.bj/assets/icon/linkedIn_icon.png" alt="LinkedIn" />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:20px;font-size:13px;line-height:1.5">
+                © Ministère des affaires étrangères – <%= new Date().getFullYear().toString() %><br />
+                Boulevard de la Marina, Cadjehoun, Cotonou
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:20px;font-size:16px;font-weight:bold">Téléchargez l'application ePass</td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:10px">
+                <a href="https://apps.apple.com/app/govsmart">
+                  <img style="height:40px;margin-right:10px" src="https://epassportal.gouv.bj/assets/icon/apple-store.png" alt="App Store" />
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.govsmart">
+                  <img style="height:40px" src="https://epassportal.gouv.bj/assets/icon/google-play.png" alt="Google Play" />
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:30px;padding-bottom:20px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="33.33%" height="5px" bgcolor="#d92432"></td>
+                    <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
+                    <td width="33.33%" height="5px" bgcolor="#32a343"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center">
+                <span style="font-size:12px;vertical-align:middle">Propulsé par</span>
+                <img src="https://epassportal.gouv.bj/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Seamfix Logo" />
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+
+    </table>
+  </body>
+</html>

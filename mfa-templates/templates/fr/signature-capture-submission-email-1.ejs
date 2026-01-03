@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Oui ! Il suffit de signer et c'est tout !</title>
+  </head>
+  <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
+      <!-- Header with Logos -->
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding:20px 0">
+          <img src="https://epassportal.gouv.bj/assets/icons/mfa-trio-logo.png" alt="Logos Ministériels" style="max-width:90%;height:auto" />
+        </td>
+      </tr>
+
+      <!-- Main Content -->
+      <tr>
+        <td bgcolor="#ffffff" style="padding:30px 40px;">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="color:#333;font-size:16px;line-height:1.6;">
+
+                <p style="margin:0 0 15px 0;">Bonjour<% if (firstName) { %> <%= firstName %><% } %>,</p>
+
+                <!-- CONTENU PRINCIPAL EN FRANÇAIS -->
+                <p style="margin:0 0 15px 0;">FÉLICITATIONS ! Vous avez terminé les parties les plus difficiles ! 🎉</p>
+
+                <p style="margin:0 0 10px 0;">Vous êtes à la dernière étape de la capture :</p>
+
+                <ul style="margin:0 0 20px 20px;padding:0;">
+                  <li>🎉 Numérisation du passeport (TERMINÉ !)</li>
+                  <li>🎉 Photo d'identité (TERMINÉ !)</li>
+                  <li>🎉 Documents (TERMINÉ !)</li>
+                  <li>🎉 Empreintes digitales (TERMINÉ !)</li>
+                  <li>👉 Signature (à faire maintenant - (5 secondes !))</li>
+                </ul>
+
+                <p style="margin:0 0 15px 0;">ÉTAPE 5 SUR 6 : Fournir une signature numérique. C'est l'étape la plus simple :</p>
+
+                <ol style="margin:0 0 20px 20px;padding:0;">
+                  <li>Ouvrez l'application.</li>
+                  <li>Signez sur l'écran de votre téléphone avec votre doigt.</li>
+                </ol>
+
+                <p style="margin:0 0 15px 0;">C'est ça!</p>
+
+                <p style="margin:0 0 10px 0;">Dès que vous aurez apposé votre signature, votre demande sera finalisée et votre passeport sera mis en production.</p>
+                <p style="margin:0 0 10px 0;">Vous n'êtes littéralement qu'à 30 secondes de finaliser votre candidature. Faites-le tout de suite !</p>
+
+                <!-- CTA Button -->
+                <table border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0">
+                  <tr>
+                    <td align="center" bgcolor="#0c3b63" style="border-radius:4px;padding:14px 30px">
+                      <a href="<%= appDeepLink || '#' %>" style="color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;display:inline-block">SIGNEZ MAINTENANT</a>
+                    </td>
+                  </tr>
+                </table>
+
+                <% if (supportEmail) { %>
+                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">Besoin d'aide ? Contactez : <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
+                <% } %>
+
+              </td>
+            </tr>
+            <!-- Closing -->
+            <tr>
+              <td
+                style="
+                  font-size: 18px;
+                  line-height: 1.6;
+                  padding-top: 25px;
+                "
+              >
+                Cordialement,<br />
+                <strong>L'équipe DEI</strong>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td bgcolor="#0a2d52" style="padding:30px 40px;color:#ffffff">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#ffffff;font-size:13px">
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="50%" valign="middle">
+                      <img src="https://epassportal.gouv.bj/assets/icons/mfa_logo.png" alt="Logo MFA" style="height:45px" />
+                    </td>
+                    <td width="50%" align="right" valign="middle">
+                      <a href="https://www.linkedin.com/company/benin-diplomatie/" style="text-decoration:none">
+                        <img style="height:24px;margin:0 5px" src="https://epassportal.gouv.bj/assets/icon/linkedIn_icon.png" alt="LinkedIn" />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:20px;font-size:13px;line-height:1.5">
+                © Ministère des affaires étrangères – <%= new Date().getFullYear().toString() %><br />
+                Boulevard de la Marina, Cadjehoun, Cotonou
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:20px;font-size:16px;font-weight:bold">Téléchargez l'application ePass</td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:10px">
+                <a href="https://apps.apple.com/app/govsmart">
+                  <img style="height:40px;margin-right:10px" src="https://epassportal.gouv.bj/assets/icon/apple-store.png" alt="App Store" />
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.govsmart">
+                  <img style="height:40px" src="https://epassportal.gouv.bj/assets/icon/google-play.png" alt="Google Play" />
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:30px;padding-bottom:20px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="33.33%" height="5px" bgcolor="#d92432"></td>
+                    <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
+                    <td width="33.33%" height="5px" bgcolor="#32a343"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center">
+                <span style="font-size:12px;vertical-align:middle">Propulsé par</span>
+                <img src="https://epassportal.gouv.bj/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Seamfix Logo" />
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+
+    </table>
+  </body>
+</html>

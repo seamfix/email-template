@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Presque à mi-chemin ! Téléchargez vos documents (1 minute)</title>
+  </head>
+  <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
+      <!-- Header with Logos -->
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding:20px 0">
+          <img src="https://epassportal.gouv.bj/assets/icons/mfa-trio-logo.png" alt="Logos Ministériels" style="max-width:90%;height:auto" />
+        </td>
+      </tr>
+
+      <!-- Main Content -->
+      <tr>
+        <td bgcolor="#ffffff" style="padding:30px 40px;">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="color:#333;font-size:16px;line-height:1.6;">
+
+                <p style="margin:0 0 15px 0;">Bonjour<% if (firstName) { %> <%= firstName %><% } %>,</p>
+
+                <!-- CONTENU PRINCIPAL EN FRANÇAIS -->
+                <p style="margin:0 0 15px 0;">Tout se passe à merveille ! Passeport scanné ✓ Portrait pris ✓</p>
+
+                <p style="margin:0 0 15px 0;">ÉTAPE 3 SUR 6 : Téléverser les documents requis <strong>(prend 1 minute)</strong>.</p>
+
+                <p style="margin:0 0 10px 0;">Documents à télécharger :</p>
+
+                <ul style="margin:0 0 20px 20px;padding:0;">
+                  <li>📌 Certificat de naissance ANIP (obligatoire)</li>
+                  <li>📌 Certificat d'identification personnelle</li>
+                  <li>📌 Ancien passeport</li>
+                  <li>📌 Certificat d'autorisation parentale (pour une demande concernant un enfant)</li>
+                  <li>📌 Si vous êtes né à l'étranger, vous devrez fournir le certificat national de vos parents et votre acte de naissance délivré par votre pays de naissance.</li>
+                  <li>📌 Photo numérique (une photo numérique nette et professionnelle sur fond blanc prise en studio)</li>
+                </ul>
+
+                <p style="margin:0 0 15px 0;">Comment procéder :</p>
+
+                <ol style="margin:0 0 20px 20px;padding:0;">
+                  <li>Préparez vos documents</li>
+                  <li>Utilisez l'appareil photo de votre téléphone pour photographier chaque document ou téléchargez-le au format PDF si vous le possédez déjà sous forme numérique.</li>
+                  <li>Assurez-vous que le texte est clair et lisible.</li>
+                  <li>Téléchargez via l'application</li>
+                </ol>
+
+                <p style="margin:0 0 15px 0;">Conseils pour des photos de documents nettes :</p>
+
+                <ol style="margin:0 0 20px 20px;padding:0;">
+                  <li>Déposez le document à plat sur la table.</li>
+                  <li>Prenez la photo directement du dessus.</li>
+                  <li>Assurez-vous que tous les bords soient visibles.</li>
+                  <li>Bon éclairage, pas d'ombres</li>
+                  <li>Aucun reflet ni éblouissement</li>
+                </ol>
+
+                <p style="margin:0 0 10px 0;">Après cela : Il ne reste plus que 3 étapes !</p>
+
+                <ul style="margin:0 0 20px 20px;padding:0;">
+                  <li>🎊 Numérisation du passeport (TERMINÉ !)</li>
+                  <li>🎊 Photo de portrait (TERMINÉE !)</li>
+                  <li>Téléchargement de documents (à faire maintenant - 1 min)</li>
+                  <li>Capture d'empreintes digitales (2 min)</li>
+                  <li>Signature (10 sec) et soumission</li>
+                </ul>
+
+                <p style="margin:0 0 10px 0;">Vous avez parcouru la moitié du chemin pour terminer le processus.</p>
+
+                <!-- CTA Button -->
+                <table border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px 0">
+                  <tr>
+                    <td align="center" bgcolor="#0c3b63" style="border-radius:4px;padding:14px 30px">
+                      <a href="<%= appDeepLink || '#' %>" style="color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;display:inline-block">TÉLÉCHARGEZ VOS DOCUMENTS MAINTENANT</a>
+                    </td>
+                  </tr>
+                </table>
+
+                <% if (supportEmail) { %>
+                  <p style="font-size:13px;color:#555;margin:20px 0 5px 0;">Besoin d'aide ? Contactez : <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
+                <% } %>
+
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td bgcolor="#0a2d52" style="padding:30px 40px;color:#ffffff">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#ffffff;font-size:13px">
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="50%" valign="middle">
+                      <img src="https://epassportal.gouv.bj/assets/icons/mfa_logo.png" alt="Logo MFA" style="height:45px" />
+                    </td>
+                    <td width="50%" align="right" valign="middle">
+                      <a href="https://www.linkedin.com/company/benin-diplomatie/" style="text-decoration:none">
+                        <img style="height:24px;margin:0 5px" src="https://epassportal.gouv.bj/assets/icon/linkedIn_icon.png" alt="LinkedIn" />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:20px;font-size:13px;line-height:1.5">
+                © Ministère des affaires étrangères – <%= new Date().getFullYear().toString() %><br />
+                Boulevard de la Marina, Cadjehoun, Cotonou
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:20px;font-size:16px;font-weight:bold">Téléchargez l'application ePass</td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:10px">
+                <a href="https://apps.apple.com/app/govsmart">
+                  <img style="height:40px;margin-right:10px" src="https://epassportal.gouv.bj/assets/icon/apple-store.png" alt="App Store" />
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.govsmart">
+                  <img style="height:40px" src="https://epassportal.gouv.bj/assets/icon/google-play.png" alt="Google Play" />
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding-top:30px;padding-bottom:20px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="33.33%" height="5px" bgcolor="#d92432"></td>
+                    <td width="33.33%" height="5px" bgcolor="#f5c717"></td>
+                    <td width="33.33%" height="5px" bgcolor="#32a343"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center">
+                <span style="font-size:12px;vertical-align:middle">Propulsé par</span>
+                <img src="https://epassportal.gouv.bj/assets/icons/seamfix.svg" style="margin-left:8px;height:20px;vertical-align:middle" alt="Seamfix Logo" />
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+
+    </table>
+  </body>
+</html>
