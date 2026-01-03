@@ -31,7 +31,7 @@
                   <li>Cliquez sur Soumettre — c’est fait !</li>
                 </ul>
 
-                <p style="margin:0 0 12px 0;">Vous n’avez pas votre IC ? L’application contient des instructions pour l’obtenir. <span style="color:#0c3b63;text-decoration:none">[Comment obtenir votre IC]</span></p>
+                <p style="margin:0 0 12px 0;">Vous n’avez pas votre IC ? L’application contient des instructions pour l’obtenir. <a href="https://service-public.bj/public/services/service/PS01351" target="_blank" rel="noopener noreferrer" style="color:#0c3b63;text-decoration:none">[Comment obtenir votre IC]</a></p>
 
                 <p style="margin:0 0 12px 0;">C’est la dernière étape ! Une fois soumise, votre demande est examinée. Une fois approuvée, elle passe immédiatement en production et vous la recevrez sous environ 4 semaines.</p>
 
@@ -43,15 +43,9 @@
                   </tr>
                 </table>
 
-                <p style="font-size:13px;color:#555;margin:16px 0 5px 0;">Si le bouton ne fonctionne pas, copiez et collez ce lien dans votre navigateur :<br/>
-                  <span><%= typeof actionUrl === 'string' ? actionUrl : '' %></span>
-                </p>
+              
 
-                <% if (typeof supportEmail === 'string' && supportEmail) { %>
-                  <p style="font-size:13px;color:#555;margin:0 0 5px 0;">Assistance : <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
-                <% } else { %>
-                  <p style="font-size:13px;color:#555;margin:0 0 5px 0;">Assistance : <a href="mailto:support@govsmart.gov.ng" style="color:#0c3b63;text-decoration:none">support@govsmart.gov.ng</a></p>
-                <% } %>
+               
               </td>
             </tr>
           </table>
