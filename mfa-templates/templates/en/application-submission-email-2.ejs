@@ -31,7 +31,7 @@
 
                 <p style="margin:0 0 12px 0;">Click Submit!</p>
 
-                <p style="margin:0 0 12px 0;">Don't have your IC? Check the instructions in the app on how to get it: <span style="color:#0c3b63;text-decoration:none">[IC Instructions Link]</span>.</p>
+                <p style="margin:0 0 12px 0;">Don't have your IC? Check the instructions in the app on how to get it: <a href="https://service-public.bj/public/services/service/PS01351" target="_blank" rel="noopener noreferrer" style="color:#0c3b63;text-decoration:none">[IC Instructions Link]</a>.</p>
                 <p style="margin:0 0 12px 0;">Once you submit. Once approved, it goes into production immediately. We'll keep you updated at every stage and deliver to your door in about 4 weeks!</p>
 
                 <table border="0" cellpadding="0" cellspacing="0" style="margin-top:16px;">
@@ -42,15 +42,7 @@
                   </tr>
                 </table>
 
-                <p style="font-size:13px;color:#555;margin:16px 0 5px 0;">If the button doesn't work, copy and paste this link into your browser:<br/>
-                  <span><%= typeof actionUrl === 'string' ? actionUrl : '' %></span>
-                </p>
-
-                <% if (typeof supportEmail === 'string' && supportEmail) { %>
-                  <p style="font-size:13px;color:#555;margin:0 0 5px 0;">Help: <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a></p>
-                <% } else { %>
-                  <p style="font-size:13px;color:#555;margin:0 0 5px 0;">Help: <a href="mailto:support@govsmart.gov.ng" style="color:#0c3b63;text-decoration:none">support@govsmart.gov.ng</a></p>
-                <% } %>
+                
               </td>
             </tr>
           </table>
