@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Application Submission — Submit Now</title>
+    <title><% if (crnEnabled) { <h2>You are yet to submit your Application. Need help? </h2> } else{ <h2>Application Submission — Submit Now</h2>} %></title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
@@ -18,31 +18,45 @@
               <td style="color:#333;font-size:16px;line-height:1.6;">
                 <p style="margin:0 0 15px 0;">Hello<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
 
-                <p style="margin:0 0 12px 0;">You have provided your signature and consent. Now, let's submit your application.</p>
-                <p style="margin:0 0 12px 0;">You need your Consular Registration Number (IC) to submit.</p>
+                <% if (crnEnabled) { %>
 
-                <p style="margin:16px 0 8px 0;font-weight:bold;">Have your CRN?</p>
-                <ul style="margin:0 0 12px 20px;padding:0;color:#333;">
-                  <li>Go to the submission preview page in app</li>
-                  <li>Enter CRN</li>
-                  <li>Wait for validation</li>
-                  <li>Submit button will become enabled</li>
-                </ul>
-
-                <p style="margin:0 0 12px 0;">Click Submit!</p>
-
-                <p style="margin:0 0 12px 0;">Don't have your IC? Check the instructions in the app on how to get it: <a href="https://service-public.bj/public/services/service/PS01351" target="_blank" rel="noopener noreferrer" style="color:#0c3b63;text-decoration:none">[IC Instructions Link]</a>.</p>
-                <p style="margin:0 0 12px 0;">Once you submit. Once approved, it goes into production immediately. We'll keep you updated at every stage and deliver to your door in about 4 weeks!</p>
-
-                <table border="0" cellpadding="0" cellspacing="0" style="margin-top:16px;">
-                  <tr>
-                    <td align="center" bgcolor="#0b5fff" style="border-radius:6px;">
-                      <a href="<%= typeof actionUrl === 'string' ? actionUrl : '#' %>" style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold">SUBMIT NOW</a>
-                    </td>
-                  </tr>
-                </table>
-
+                  <p style="margin:0 0 12px 0;">
+                    We noticed that you’re yet to submit your application. Need help?
+                  </p>
                 
+                  <p style="margin:0 0 12px 0;">
+                    Let us help you now
+                  </p>
+              
+                  <p style="margin:0 0 12px 0;">
+                    Tel : <% telephone %> lets talk.
+                  </p>
+
+                  <% } else {%>
+                    <p style="margin:0 0 12px 0;">You have provided your signature and consent. Now, let's submit your application.</p>
+                    <p style="margin:0 0 12px 0;">You need your Consular Registration Number (IC) to submit.</p>
+
+                    <p style="margin:16px 0 8px 0;font-weight:bold;">Have your CRN?</p>
+                    <ul style="margin:0 0 12px 20px;padding:0;color:#333;">
+                      <li>Go to the submission preview page in app</li>
+                      <li>Enter CRN</li>
+                      <li>Wait for validation</li>
+                      <li>Submit button will become enabled</li>
+                    </ul>
+
+                    <p style="margin:0 0 12px 0;">Click Submit!</p>
+
+                    <p style="margin:0 0 12px 0;">Don't have your IC? Check the instructions in the app on how to get it: <a href="https://service-public.bj/public/services/service/PS01351" target="_blank" rel="noopener noreferrer" style="color:#0c3b63;text-decoration:none">[IC Instructions Link]</a>.</p>
+                    <p style="margin:0 0 12px 0;">Once you submit. Once approved, it goes into production immediately. We'll keep you updated at every stage and deliver to your door in about 4 weeks!</p>
+
+                    <table border="0" cellpadding="0" cellspacing="0" style="margin-top:16px;">
+                      <tr>
+                        <td align="center" bgcolor="#0b5fff" style="border-radius:6px;">
+                          <a href="<%= typeof actionUrl === 'string' ? actionUrl : '#' %>" style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold">SUBMIT NOW</a>
+                        </td>
+                      </tr>
+                    </table>
+                <% } %>
               </td>
             </tr>
           </table>
