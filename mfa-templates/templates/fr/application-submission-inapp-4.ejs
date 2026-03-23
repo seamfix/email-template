@@ -1,7 +1,7 @@
-<% if (crnEnabled) { %>
+<% if (typeof crnEnabled !== 'undefined' && crnEnabled) { %>
     Vous n'avez toujours pas soumis votre candidature. Nous pouvons vous aider <br>
     Contactez-nous par courriel à <%= supportEmail %> ou <br>
     Tél : <%= telephone %> parlons.
 <% } else { %>
-        <%- "Action requise : Soumettez votre demande ✅ Paiement traité, mais votre demande n’est pas encore soumise. Numéro IC manquant ? Contactez le support, nous vous guiderons. Ne tardez pas !" %>
+        <%= "Action requise : Soumettez votre demande ✅ Paiement traité, mais votre demande n’est pas encore soumise. Numéro IC manquant ? Contactez le support, nous vous guiderons. Ne tardez pas !" %>
 <% } %>

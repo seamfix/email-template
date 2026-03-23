@@ -1,5 +1,5 @@
-<% if (crnEnabled) { %>
+<% if (typeof crnEnabled !== 'undefined' && crnEnabled) { %>
     <%= 'Besoin d\'aide pour votre candidature ? Laissez-nous vous aider.' %>
 <% } else { %>
-    <%- "Soumettez votre demande ✅ Vous avez fourni votre signature ! Entrez votre Numéro d’Enregistrement Consulaire (IC) dans l’app pour activer la soumission. Une fois soumis, votre demande passe en révision puis en production." %>
+    <%= "Soumettez votre demande ✅ Vous avez fourni votre signature ! Entrez votre Numéro d’Enregistrement Consulaire (IC) dans l’app pour activer la soumission. Une fois soumis, votre demande passe en révision puis en production." %>
 <% } %>

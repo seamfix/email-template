@@ -2,7 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title><% if (crnEnabled) { <h2> Need help submitting your Application? </h2> } else{ <h2> Application Submission — We Can Help </h2>} %></title>
+    <title>
+      <% if (typeof crnEnabled !== 'undefined' && crnEnabled) { %>
+        <h2> Need help submitting your Application? </h2>
+        <% } else{ %>
+          <h2> Application Submission — We Can Help </h2>
+        <% } %>
+    </title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
@@ -18,17 +24,17 @@
               <td style="color:#333;font-size:16px;line-height:1.6;">
                 <p style="margin:0 0 15px 0;">Hello<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
 
-                <% if (crnEnabled) { %>
+                <% if (typeof crnEnabled !== 'undefined' && crnEnabled) { %>
                   <p style="margin:0 0 12px 0;">
                     We noticed that you’re yet to submit your application. Need help?
                   </p>
-              
+
                   <p style="margin:0 0 12px 0;">
-                    Let us help you email us now at or 
+                    Let us help you email us now at or
                   </p>
-              
+
                   <p style="margin:0 0 12px 0;">
-                    Tel : <% telephone %> lets talk.
+                    Tel : <%= telephone %> lets talk.
                   </p>
                 <% } else { %>
                   <p style="margin:0 0 12px 0;">Your payment has processed, but your application hasn't been submitted yet.</p>
@@ -46,7 +52,7 @@
                     </tr>
                   </table>
                 <% } %>
-               
+
               </td>
             </tr>
           </table>
