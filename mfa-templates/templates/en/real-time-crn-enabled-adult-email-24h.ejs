@@ -19,7 +19,7 @@
             <tr>
               <td style="color:#333;font-size:16px;line-height:1.6;">
                 <p style="margin:0 0 15px 0;">
-                  Hello<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,
+                  Hello,
                 </p>
       
                 <p style="margin:0 0 12px 0;">
@@ -46,12 +46,12 @@
       
                 <p style="margin:0 0 12px 0;">
                   or contact us via email on 
-                  <a href="mailto:ediaspora@gouv.bj" style="color:#0c3b63;text-decoration:none">ediaspora@gouv.bj</a>
+                  <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><% supportEmail %></a>
                   or
                 </p>
       
                 <p style="margin:0 0 20px 0;">
-                  Tel : +229 0198919191
+                  Tel : <% telephone %>
                 </p>
       
               </td>

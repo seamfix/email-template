@@ -1,1 +1,7 @@
-<%- "Action Needed: Submit Your Application ✅ Payment processed, but your application isn’t submitted yet. Missing your IC? Contact support and we’ll guide you through it. Don’t delay!" %>
+<% if (crnEnabled) { %>
+    You still haven't submitted your application. We can help <br>
+    Contact us via email at <%= supportEmail %> or <br>
+    Tel : <%= telephone %> lets talk 
+<% } else { %>
+    <%- "Action Needed: Submit Your Application ✅ Payment processed, but your application isn’t submitted yet. Missing your IC? Contact support and we’ll guide you through it. Don’t delay!" %>
+<% } %>

@@ -1,1 +1,5 @@
-<%- 'Final step: submit your application. ✅ Payment processed! Enter your Consular Registration Number (IC) in the app and submit. Once submitted, your application moves to review and production.' %>
+<% if (crnEnabled) { %>
+    <%= 'Congratulations on coming so far. Confirm the details and submit.' %>
+  <% } else { %>
+    <%= 'Final step: submit your application. ✅ Payment processed! Enter your Consular Registration Number (IC) in the app and submit. Once submitted, your application moves to review and production.' %>
+<% } %>
