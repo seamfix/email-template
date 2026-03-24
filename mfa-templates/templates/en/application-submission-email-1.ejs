@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
       <title>
-        <% if (typeof crnEnabled !== 'undefined' && crnEnabled) { %>
-          <h2>Congratulations you’re almost done</h2>
+        <% if (typeof crnEnabled !== 'undefined' && crnEnabled == 'true') { %>
+          Congratulations you’re almost done
           <% } else{ %>
-            <h2>Application Submission — Final Step </h2>
+            Application Submission — Final Step
           <% } %>
       </title>
   </head>
@@ -23,7 +23,7 @@
             <tr>
               <td style="color:#333;font-size:16px;line-height:1.6;">
                 <p style="margin:0 0 15px 0;">Hello<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
-                <% if (typeof crnEnabled !== 'undefined' && crnEnabled) { %>
+                <% if (typeof crnEnabled !== 'undefined' && crnEnabled == 'true') { %>
                   <p style="margin:0 0 12px 0;">
                     Congratulations on coming so far, well done!
                   </p>

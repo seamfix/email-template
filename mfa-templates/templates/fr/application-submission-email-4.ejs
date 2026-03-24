@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <title>
-      <% if (typeof crnEnabled !== 'undefined' && crnEnabled) { %>
-        <h2>Besoin d'aide pour soumettre votre candidature ?</h2>
+      <% if (typeof crnEnabled !== 'undefined' && crnEnabled == 'true') { %>
+        Besoin d'aide pour soumettre votre candidature ?
       <% } else { %>
-        <h2>Soumission de la demande — Nous pouvons vous aider</h2>
+        Soumission de la demande — Nous pouvons vous aider
       <% } %>
+    </title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
@@ -22,18 +23,18 @@
             <tr>
               <td style="color:#333;font-size:16px;line-height:1.6;">
                 <p style="margin:0 0 15px 0;">Bonjour<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
-                <% if (crnEnabled) { %>
+                <% if (crnEnabled == 'true') { %>
                     <p style="margin:0 0 12px 0;">
-                      Nous avons constaté que vous n’avez pas encore soumis votre demande. Besoin d’aide ?
-                    </p>
-                    
-                    <p style="margin:0 0 12px 0;">
-                      Laissez-nous vous aider dès maintenant
-                    </p>
-                    
-                    <p style="margin:0 0 12px 0;">
-                      Tél : <% telephone %>, parlons-en.
-                    </p>
+                    Nous avons constaté que vous n'avez pas encore soumis votre candidature. Besoin d'aide ?
+                  </p>
+
+                  <p style="margin:0 0 12px 0;">
+                    Laissez-nous vous aider dès maintenant en envoyant un email à <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none;"><%= supportEmail %></a> ou
+                  </p>
+
+                  <p style="margin:0 0 12px 0;">
+                    Tél : <%= telephone %>, parlons-en.
+                  </p>
                 <% }else{ %>
                     <p style="margin:0 0 12px 0;">Votre paiement a été traité, mais votre demande n’a pas encore été soumise.</p>
                     <p style="margin:0 0 12px 0;">Vous n’avez pas votre IC ? Nous comprenons que cela puisse être un frein.</p>
