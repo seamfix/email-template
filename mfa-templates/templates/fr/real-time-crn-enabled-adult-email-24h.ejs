@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>
-      <% if (typeof crnEnabled !== 'undefined' && crnEnabled == 'true') { %>
-        Félicitations, vous avez presque terminé
-        <% } else{ %>
-          Soumission de la demande — Dernière étape
-      <% } %>
-    </title>
+      Votre demande est en attente. Besoin d'aide ?</title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
@@ -22,60 +17,49 @@
           <table width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
               <td style="color:#333;font-size:16px;line-height:1.6;">
-                <p style="margin:0 0 15px 0;">Bonjour<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
-
-                <% if (crnEnabled == 'true') { %>
-                  <p style="margin:0 0 12px 0;">
-                    Félicitations pour votre parcours jusqu’ici, bravo !
-                  </p>
-
-                  <p style="margin:0 0 12px 0;">
-                    Veuillez vérifier attentivement les informations affichées sur la page d’aperçu afin de vous assurer qu’elles sont exactes et correspondent à ce que vous souhaitez voir sur votre passeport.
-                  </p>
-
-                  <p style="margin:0 0 12px 0;">
-                    Si vous constatez une anomalie, veuillez nous contacter par e-mail à 
-                    <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none;">
-                      <%= supportEmail %>
-                    </a> ou
-                  </p>
-
-                  <p style="margin:0 0 12px 0;">
-                    Tél : <%= telephone %>, parlons-en.
-                  </p>
-
-                <% } else { %>
-                  
-                  <p style="margin:0 0 12px 0;">EXCELLENTE NOUVELLE ! Votre paiement a été traité avec succès ! 🎉</p>
-                  <p style="margin:0 0 12px 0;">Vous êtes à la dernière étape !</p>
-                  <p style="margin:0 0 12px 0;">Nous devons valider votre Numéro d'Inscription Consulaire (IC).</p>
-
-                  <p style="margin:16px 0 8px 0;font-weight:bold;">Comment soumettre :</p>
-                  <ul style="margin:0 0 12px 20px;padding:0;color:#333;">
-                    <li>Ouvrez l’application sur la page d’aperçu de soumission</li>
-                    <li>Renseignez votre Numéro d’Inscription Consulaire (pour une demande adulte)</li>
-                    <li>Renseignez le Numéro d’Inscription Consulaire de votre enfant et le Numéro d’Autorisation Parentale (PAN) pour une demande enfant</li>
-                    <li>Le bouton Soumettre devient disponible</li>
-                    <li>Cliquez sur Soumettre — c’est fait !</li>
-                  </ul>
-
-                  <p style="margin:0 0 12px 0;">Vous n’avez pas votre IC ? L’application contient des instructions pour l’obtenir. <a href="https://service-public.bj/public/services/service/PS01351" target="_blank" rel="noopener noreferrer" style="color:#0c3b63;text-decoration:none">[Comment obtenir votre IC]</a></p>
-
-                  <p style="margin:0 0 12px 0;">C’est la dernière étape ! Une fois soumise, votre demande est examinée. Une fois approuvée, elle passe immédiatement en production et vous la recevrez sous environ 4 semaines.</p>
-
-                  <table border="0" cellpadding="0" cellspacing="0" style="margin-top:16px;">
-                    <tr>
-                      <td align="center" bgcolor="#0b5fff" style="border-radius:6px;">
-                        <a href="<%= typeof actionUrl === 'string' ? actionUrl : '#' %>" style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold">SOUMETTRE LA DEMANDE</a>
-                      </td>
-                    </tr>
-                  </table>
-                <% } %>
+                <p style="margin:0 0 15px 0;">
+                  Bonjour,
+                </p>
+      
+                <p style="margin:0 0 12px 0;">
+                  Cela fait 24 heures que vous avez créé votre compte. Laissez-nous vous aider à commencer votre demande.
+                </p>
+      
+                <p style="margin:16px 0 8px 0;font-weight:bold;">
+                  Comment valider votre IC :
+                </p>
+      
+                <p style="margin:0 0 12px 0;">
+                  • Connectez-vous à l’application<br/>
+                  • Fournissez votre Numéro d’Enregistrement Consulaire (IC) dans le champ de validation
+                </p>
+      
+                <p style="margin:0 0 12px 0;">
+                  Vous devez avoir plus de 18 ans pour créer un compte. Si vous vous êtes inscrit(e) pour votre enfant, vous devez fournir votre carte d'identité (d'adulte).
+                </p>
+      
+                <p style="margin:0 0 12px 0;">
+                  Vous n’avez pas votre IC ? Obtenez-le ici :
+                  <a href="<%= citizenPortalLink %>" style="color:#0c3b63;text-decoration:none">Citizen Portal</a>
+                </p>
+      
+                <p style="margin:0 0 12px 0;">
+                  ou contactez-nous par email à 
+                  <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none"><%= supportEmail %></a>
+                  ou
+                </p>
+      
+                <p style="margin:0 0 20px 0;">
+                  Tél : <%= telephone %>
+                </p>
+      
               </td>
             </tr>
           </table>
         </td>
       </tr>
+
+      <!-- footer -->
       <tr>
         <td bgcolor="#0a2d52" style="padding:30px 40px;color:#ffffff">
           <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#ffffff;font-size:13px">
