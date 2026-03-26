@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livraison du passeport confirmée</title>
+  </head>
+  <body style="margin:0;padding:0;font-family:Work Sans,Arial,sans-serif;background-color:#f0f2f5">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
+      <tr>
+        <td bgcolor="#ffffff" style="padding:30px 40px">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td style="color:#0c3b63;font-family:Arial,sans-serif;font-size:20px;font-weight:bold;padding-bottom:10px">
+                Livraison du passeport confirmée
+              </td>
+            </tr>
+            <tr>
+              <td style="color:#333;font-family:Arial,sans-serif;font-size:16px;line-height:1.6;padding-bottom:20px">
+                Ceci est pour confirmer que le passeport suivant a été livré avec succès au demandeur.
+              </td>
+            </tr>
+            <tr>
+              <td style="color:#333;font-family:Arial,sans-serif;font-size:16px;line-height:1.6;padding-top:5px;padding-bottom:10px">
+                <strong>ID du passeport :</strong> <%= passportId %><br/>
+                <strong>Numéro de suivi :</strong> <%= trackingNumber %><br/>
+                <strong>Statut :</strong> <%= statusLabel %>
+              </td>
+            </tr>
+            <tr>
+              <td style="color:#333;font-family:Arial,sans-serif;font-size:16px;line-height:1.6;padding-top:25px">
+                Cordialement,<br/><strong>L'équipe ePass</strong>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
