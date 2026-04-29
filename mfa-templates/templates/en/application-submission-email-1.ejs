@@ -2,7 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Application Submission — Final Step</title>
+      <title>
+        <% if (typeof crnEnabled !== 'undefined' && crnEnabled == 'true') { %>
+          Congratulations you’re almost done
+          <% } else{ %>
+            Application Submission — Final Step
+          <% } %>
+      </title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
@@ -17,32 +23,53 @@
             <tr>
               <td style="color:#333;font-size:16px;line-height:1.6;">
                 <p style="margin:0 0 15px 0;">Hello<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
+                <% if (typeof crnEnabled !== 'undefined' && crnEnabled == 'true') { %>
+                  <p style="margin:0 0 12px 0;">
+                    Congratulations on coming so far, well done!
+                  </p>
 
-                <p style="margin:0 0 12px 0;">EXCELLENT NEWS! Your payment has been processed successfully! 🎉</p>
-                <p style="margin:0 0 12px 0;">You're on the final step!</p>
-                <p style="margin:0 0 12px 0;">We need to validate your Consular Registration Number (IC).</p>
+                  <p style="margin:0 0 12px 0;">
+                    Ensure you carefully review the details displayed on the Preview page to be sure it’s accurate and reflect what you expect to see on your passport.
+                  </p>
 
-                <p style="margin:16px 0 8px 0;font-weight:bold;">How to submit:</p>
-                <ul style="margin:0 0 12px 20px;padding:0;color:#333;">
-                  <li>Open the app to the submission preview page</li>
-                  <li>Provide your Consular Registration Number (for Adult Application)</li>
-                  <li>Provide your child’s Consular Registration Number & Parental Authorization Number (PAN) for Child Application</li>
-                  <li>Submit button becomes enabled</li>
-                  <li>Hit Submit — Done!</li>
-                </ul>
+                  <p style="margin:0 0 12px 0;">
+                    If you notice any discrepancy, let us know via email at
+                    <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none;">
+                      <%= supportEmail %>
+                    </a>
+                    or
+                  </p>
 
-                <p style="margin:0 0 12px 0;">Don't have your CRN? The app has instructions on how to obtain it. <a href="https://service-public.bj/public/services/service/PS01351" target="_blank" rel="noopener noreferrer" style="color:#0c3b63;text-decoration:none">[How to get your IC]</a></p>
+                  <p style="margin:0 0 12px 0;">
+                    Tel : <%= telephone %> lets talk .
+                  </p>
 
-                <p style="margin:0 0 12px 0;">This is the final step! Once you submit, your application is reviewed. Once approved, it goes into production immediately and you'll receive it in approximately 4 weeks.</p>
+                <% } else { %>
+                  <p style="margin:0 0 12px 0;">EXCELLENT NEWS! Your payment has been processed successfully! 🎉</p>
+                  <p style="margin:0 0 12px 0;">You're on the final step!</p>
+                  <p style="margin:0 0 12px 0;">We need to validate your Consular Registration Number (IC).</p>
 
-                <table border="0" cellpadding="0" cellspacing="0" style="margin-top:16px;">
-                  <tr>
-                    <td align="center" bgcolor="#0b5fff" style="border-radius:6px;">
-                      <a href="<%= typeof actionUrl === 'string' ? actionUrl : '#' %>" style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold">SUBMIT APPLICATION</a>
-                    </td>
-                  </tr>
-                </table>
-              
+                  <p style="margin:16px 0 8px 0;font-weight:bold;">How to submit:</p>
+                  <ul style="margin:0 0 12px 20px;padding:0;color:#333;">
+                    <li>Open the app to the submission preview page</li>
+                    <li>Provide your Consular Registration Number (for Adult Application)</li>
+                    <li>Provide your child’s Consular Registration Number & Parental Authorization Number (PAN) for Child Application</li>
+                    <li>Submit button becomes enabled</li>
+                    <li>Hit Submit — Done!</li>
+                  </ul>
+
+                  <p style="margin:0 0 12px 0;">Don't have your CRN? The app has instructions on how to obtain it. <a href="https://service-public.bj/public/services/service/PS01351" target="_blank" rel="noopener noreferrer" style="color:#0c3b63;text-decoration:none">[How to get your IC]</a></p>
+
+                  <p style="margin:0 0 12px 0;">This is the final step! Once you submit, your application is reviewed. Once approved, it goes into production immediately and you'll receive it in approximately 4 weeks.</p>
+
+                  <table border="0" cellpadding="0" cellspacing="0" style="margin-top:16px;">
+                    <tr>
+                      <td align="center" bgcolor="#0b5fff" style="border-radius:6px;">
+                        <a href="<%= typeof actionUrl === 'string' ? actionUrl : '#' %>" style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold">SUBMIT APPLICATION</a>
+                      </td>
+                    </tr>
+                  </table>
+                <% } %>
               </td>
             </tr>
           </table>
