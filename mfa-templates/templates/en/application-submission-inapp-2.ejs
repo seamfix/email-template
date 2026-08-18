@@ -1,1 +1,5 @@
-<%- "Submit Your Application ✅ You’ve provided your signature! Enter your Consular Registration Number (IC) in the app to enable submission. Once submitted, your application moves to review and production." %>
+<% if (typeof crnEnabled !== 'undefined' && crnEnabled == 'true') { %>
+  <%= 'Need help with your submission? Let us help you.' %>
+<% } else { %>
+  <%= "Submit Your Application ✅ You’ve provided your signature! Enter your Consular Registration Number (IC) in the app to enable submission. Once submitted, your application moves to review and production." %>
+<% } %>
