@@ -2,7 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Application Submission — Reminder</title>
+    <title>
+    <% if (typeof crnEnabled !== 'undefined' && crnEnabled == 'true') { %>
+        Need help submitting your Application?
+        <% } else{ %>
+          Application Submission — Reminder
+        <% } %>
+    </title>
   </head>
   <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto">
@@ -18,31 +24,64 @@
               <td style="color:#333;font-size:16px;line-height:1.6;">
                 <p style="margin:0 0 15px 0;">Hello<% if (typeof firstName === 'string' && firstName.trim()) { %> <%= firstName %><% } %>,</p>
 
-                <p style="margin:0 0 12px 0;">You haven't submitted your application yet.</p>
-                <p style="margin:0 0 12px 0;">Passport production can't begin until you submit with your IC.</p>
+                <% if (typeof crnEnabled !== 'undefined' && crnEnabled == 'true') { %>
+                  <p style="margin:0 0 12px 0;">
+                    We noticed that you’re yet to submit your application. Need help?
+                  </p>
 
-                <p style="margin:16px 0 8px 0;font-weight:bold;">To submit:</p>
-                <ul style="margin:0 0 12px 20px;padding:0;color:#333;">
-                  <li>Get your Consular Registration Number (IC)</li>
-                  <li>Enter it on the preview page in the app</li>
-                  <li>The system validates your CRN</li>
-                  <li>Submit button enables</li>
-                  <li>Click Submit</li>
-                </ul>
+                  <p style="margin:0 0 12px 0;">
+                    Let us help you email us now at <a href="mailto:<%= supportEmail %>" style="color:#0c3b63;text-decoration:none;"><%= supportEmail %></a> or
+                  </p>
 
-                <p style="margin:0 0 12px 0;">Need help getting your IC? Click on the <span style="color:#0c3b63;text-decoration:none">[IC Instructions Link]</span> or contact support at <a href="mailto:ediaspora@gouv.bj" style="color:#0c3b63;text-decoration:none">ediaspora@gouv.bj</a>. The sooner you submit, the sooner you get your passport!</p>
+                  <p style="margin:0 0 12px 0;">
+                    Tel : <%= telephone %> lets talk.
+                  </p>
 
-                <p style="margin:0 0 12px 0;"><strong>Target delivery:</strong> 4 weeks after submission.</p>
+                <% } else { %>
 
-                <table border="0" cellpadding="0" cellspacing="0" style="margin-top:16px;">
-                  <tr>
-                    <td align="center" bgcolor="#0b5fff" style="border-radius:6px;">
-                      <a href="<%= typeof actionUrl === 'string' ? actionUrl : '#' %>" style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold">SUBMIT APPLICATION</a>
-                    </td>
-                  </tr>
-                </table>
+                  <p style="margin:0 0 12px 0;">
+                    You haven't submitted your application yet.
+                  </p>
 
-            
+                  <p style="margin:0 0 12px 0;">
+                    Passport production can't begin until you submit with your IC.
+                  </p>
+
+                  <p style="margin:16px 0 8px 0;font-weight:bold;">To submit:</p>
+                  <ul style="margin:0 0 12px 20px;padding:0;color:#333;">
+                    <li>Get your Consular Registration Number (IC)</li>
+                    <li>Enter it on the preview page in the app</li>
+                    <li>The system validates your CRN</li>
+                    <li>Submit button enables</li>
+                    <li>Click Submit</li>
+                  </ul>
+
+                  <p style="margin:0 0 12px 0;">
+                    Need help getting your IC? Click on the
+                    <span style="color:#0c3b63;text-decoration:none">[IC Instructions Link]</span>
+                    or contact support at
+                    <a href="mailto:ediaspora@gouv.bj" style="color:#0c3b63;text-decoration:none">
+                      ediaspora@gouv.bj
+                    </a>.
+                    The sooner you submit, the sooner you get your passport!
+                  </p>
+
+                  <p style="margin:0 0 12px 0;">
+                    <strong>Target delivery:</strong> 4 weeks after submission.
+                  </p>
+
+                  <table border="0" cellpadding="0" cellspacing="0" style="margin-top:16px;">
+                    <tr>
+                      <td align="center" bgcolor="#0b5fff" style="border-radius:6px;">
+                        <a href="<%= typeof actionUrl === 'string' ? actionUrl : '#' %>"
+                           style="display:inline-block;color:#fff;text-decoration:none;padding:12px 20px;font-weight:bold">
+                          SUBMIT APPLICATION
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+
+                <% } %>
               </td>
             </tr>
           </table>
