@@ -1,0 +1,86 @@
+<%
+/*
+ * NCSR branded email. Self-contained by necessity: the platform services call
+ * ejs.render(templateString, data) with no `filename`, so an EJS include cannot be resolved
+ * and every file has to carry its own shell.
+ *
+ * assetBaseUrl is not passed by any caller today, so the default below is what renders.
+ * DevOps: this is the one line to correct if the images are served from another origin.
+ */
+var ASSETS = (typeof assetBaseUrl !== 'undefined' && assetBaseUrl) ? assetBaseUrl : 'https://ncsr.gov.ng/assets/email';
+var YEAR = (typeof year !== 'undefined' && year) ? year : new Date().getFullYear();
+%><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A sign-in to your NCSR account failed</title>
+  </head>
+  <body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f0f2f5;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:20px auto;">
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding:24px 20px;border-bottom:1px solid #e2e4e8;">
+          <img src="<%= ASSETS %>/ncsr-logo-green.png" alt="National Cooperative Smart Registry" width="167" height="48" style="display:inline-block;border:0;outline:none;text-decoration:none;" />
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffff" style="padding:30px 40px;color:#444444;font-size:15px;line-height:1.6;">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="font-size:22px;font-weight:bold;color:#1a1a1a;padding-bottom:16px;">A sign-in attempt failed</td>
+            </tr>
+            <tr>
+              <td style="padding-bottom:8px;"><p style="margin:0 0 15px 0;">Hello <%= name %>, someone tried to sign in to your NCSR account and did not succeed.</p></td>
+            </tr>
+            <tr>
+              <td style="padding:4px 0 20px 0;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="border:1px solid #e2e4e8;border-radius:4px;background-color:#f8f9fa;padding:14px 16px;font-size:14px;color:#444444;"><%= browserName %> &middot; <%= date %></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-size:13px;padding-bottom:16px;">If this was you, there is nothing to do. If it was not, change your password.</td>
+            </tr>
+            <tr>
+              <td style="font-size:13px;padding-bottom:20px;">
+                If you have any questions, feel free to reach out to our support team at
+                <a href="https://ncsr.gov.ng" style="color:#1b7a43;text-decoration:underline;">ncsr.gov.ng</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-size:14px;">Best regards,<br /><strong>The NCSR Team</strong></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:0;">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="33%" height="6" bgcolor="#2f8f52" style="font-size:0;line-height:0;">&nbsp;</td>
+              <td width="20%" height="6" bgcolor="#ffffff" style="font-size:0;line-height:0;">&nbsp;</td>
+              <td width="47%" height="6" bgcolor="#2f8f52" style="font-size:0;line-height:0;">&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#0d1210" style="background-color:#0d1210;background-image:linear-gradient(160deg,#0d1210,#0b4227);padding:28px 40px;color:#d6ded8;font-family:Arial,sans-serif;font-size:12px;line-height:1.6;">
+          <div style="padding-bottom:12px;">
+            <img src="<%= ASSETS %>/ncsr-logo-white.png" alt="National Cooperative Smart Registry" width="111" height="32" style="display:inline-block;border:0;outline:none;text-decoration:none;" />
+          </div>
+          <div style="padding-bottom:16px;">An official federal digital platform for cooperative registration, regulation and identity services, delivered by the Federal Ministry of Agriculture &amp; Food Security, the Cooperative Federation of Nigeria and Seamfix.</div>
+          <div style="padding-bottom:16px;text-align:center;">
+            <img src="<%= ASSETS %>/coat-of-arms.png" alt="Coat of arms of Nigeria" width="40" height="39" style="display:inline-block;border:0;margin-right:14px;" />
+            <img src="<%= ASSETS %>/cfn-logo.png" alt="Cooperative Federation of Nigeria" width="30" height="30" style="display:inline-block;border:0;margin-right:14px;" />
+            <img src="<%= ASSETS %>/seamfix-logo.png" alt="Seamfix" width="59" height="30" style="display:inline-block;border:0;" />
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,0.15);padding-top:14px;text-align:center;">&copy; <%= YEAR %> National Cooperative Smart Registry &middot; Federal Republic of Nigeria. All rights reserved.</div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
