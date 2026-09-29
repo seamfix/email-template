@@ -42,21 +42,32 @@ renders those itself. This folder covers only the account-security notices the p
 Widening it needs a change to `SystemLanguage` in `platform-auth-ms`. That has been raised with the
 platform team.
 
-## For DevOps — one line to confirm
+## Where the images come from
 
-Each HTML template opens with:
+The five images are downloaded by the recipient's mail client when the email is opened, so each
+`<img>` needs an absolute, publicly reachable URL.
 
-```js
-var ASSETS = (typeof assetBaseUrl !== 'undefined' && assetBaseUrl) ? assetBaseUrl : 'https://ncsr.gov.ng/assets/email';
-```
+**The origin is per branch, not per deployment.** This repository carries one branch per
+environment, and each branch holds the URLs for that environment — the same way `mfa-templates`
+carries `epassportal.gouv.bj` on `main` and its dev host on `snapshot-dev`.
 
-No caller passes `assetBaseUrl` today, so **the default is what renders**. It must be the public
-origin serving `packages/frontend/ncsr-app/public/assets/email` from the NCSR repository — the same
-five images the in-app emails use. If the portal is served from another origin, correct that one line
-in each of the four HTML files.
+| Branch | Origin |
+| --- | --- |
+| `snapshot-dev` | `https://ncsr-dev.seamfix.com/assets/email` |
+| `snapshot` | set when these files are promoted to staging |
+| `main` | set when these files are promoted to production |
 
-The images are fetched by the recipient's mail client, so the origin has to be publicly reachable and
-unauthenticated.
+The constant sits at the top of each of the four HTML templates. **Update it when promoting.**
+
+`assetBaseUrl` still takes precedence if a caller ever passes one, so if the platform services
+later forward an origin, nothing here needs editing. Blanking the constant degrades to the
+wordmark set as text rather than emitting a relative `src` no mail client can resolve. A
+trailing slash on either form is tolerated.
+
+The origin must serve the same five files the NCSR application ships from
+`packages/frontend/ncsr-app/public/assets/email`: `ncsr-logo-green.png`, `ncsr-logo-white.png`,
+`coat-of-arms.png`, `cfn-logo.png`, `seamfix-logo.png`. The Angular build copies `public/` to the
+served root, so they resolve at `/assets/email/...` on whichever host serves the portal.
 
 ## Conventions
 
